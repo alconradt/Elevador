@@ -14,27 +14,30 @@
 
 //-------------------------------------- Defines, Enumerations ----------------------------------------------------------------
 
-
 typedef enum
 {
-	OVEN_OFF = 0,
-	OVEN_MIN,
-	OVEN_MED,
-	OVEN_MAX,
-	OVEN_INIT,
-	OVEN_TIMEOUT,
+	STOPED = 0,
+	MOTOR_UP,
+	MOTOR_DOWN,
+	DOOR_OPEN,
+	DOOR_CLOSE,
 	NUM_OF_OVEN_STATES
 }OVEN_DISPLAY_STATE_TYPE;
 
+typedef enum
+{
+	KEY_GROUND_FLOOR = 0,
+	KEY_FIRST_FLOOR,
+	KEY_NEXT_FLOOR,
+	NUM_OF_KEYS_EVENTS
+}KEY_SOLICITATION_TYPE;
 
 typedef enum
 {
-	KEY_OFF_EVENT = 0,
-	KEY_MIN_EVENT,
-	KEY_MED_EVENT,
-	KEY_MAX_EVENT,
+	GROUND_FLOOR = 0,
+	FIRST_FLOOR,
 	NUM_OF_KEYS_EVENTS
-}KEY_EVENT_TYPE;
+}FLOOR_TYPE;
 
 #define KEY_NONE		0xAA
 #define EVENTS_NO_EVENT 0xFF
@@ -48,8 +51,7 @@ typedef enum
 void Display__Initialize(void);
 void Display__Handler(void);
 void Display__SetState(OVEN_DISPLAY_STATE_TYPE state);
-//unsigned char Display__GetUserKeyMap(void);
-KEY_EVENT_TYPE Display__GetEvent(void);
+KEY_SOLICITATION_TYPE Display__GetEvent(void);
 
 
 

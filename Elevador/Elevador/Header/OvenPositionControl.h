@@ -1,30 +1,32 @@
 /*
- * TempSensor.h
+ * OvenPositionControl.h
  *
- *  Created on: 03/10/2017
- *      Author: MAASDN
- */
+ * Created: 13/09/2020 16:09:13
+ *  Author: andre
+ */ 
 
-#ifndef TEMPSENSOR_H_
-#define TEMPSENSOR_H_
+
+#ifndef OVENPOSITIONCONTROL_H_
+#define OVENPOSITIONCONTROL_H_
+
 
 //-------------------------------------- Include Files ----------------------------------------------------------------
-#include <Z:\Elevador\Elevador\Elevador\Header\TempSensor_prm.h>
+
+#include <Z:\Elevador\Elevador\Elevador\Header\OvenPositionControl_prm.h>
 
 //-------------------------------------- Defines, Enumerations ----------------------------------------------------------------
 
 typedef enum
 {
-	TEMP_SENSOR_1 = 0,
-	TEMP_SENSOR_2,
-	NUM_OF_TEMP_SENSOR
-}TEMP_SENSOR_TYPE;
+	OVEN_INSIDE = 0,
+	OVEN_OUTSIDE
+}OVEN_POSITION_CONTROL_STATE_TYPE;
 
 //=====================================================================================================================
 //-------------------------------------- PUBLIC (Function Prototypes) -------------------------------------------------
 //=====================================================================================================================
-void TempSensor__Initialize(void);
-unsigned short int TempSensor__GetCelsius(TEMP_SENSOR_TYPE sensor_id);
-void TempSensor__ConversionHandler(void);
 
-#endif /* TEMPSENSOR_H_ */
+void OvenPositionControl__Initialize(void);
+void OvenPositionControl__Handler(void);
+
+#endif /* OVENPOSITIONCONTROL_H_ */

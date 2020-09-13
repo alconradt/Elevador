@@ -73,30 +73,54 @@ void Appl__Initialize(void)
 	Trigger = FALSE;
 }
 
-
 void Appl__Handler(void)
+{
+	User_Action = Display__GetEvent();
+	if (User_Action != EVENTS_NO_EVENT)
+	{
+		switch(User_Action)
+		{
+			case KEY_GROUND_FLOOR:
+			
+			break;
+			
+			case KEY_FIRST_FLOOR:
+			
+			break;
+			
+			case KEY_NEXT_FLOOR:
+			
+			break;
+			
+			default:
+			break;
+		}//fim do switch
+	}
+}// fim do Appl_Handler
+
+
+/*void Appl__Handler(void)
 {//unsigned short int ad_value;
 	
-#if (EXP_OVEN == ENABLED)
-          User_Action = Display__GetEvent();
-		   if (User_Action != EVENTS_NO_EVENT)
-		    {
-			switch(User_Action)
-			    {
-			    case KEY_OFF_EVENT:
-				   Display__SetState(OVEN_OFF);
-				   OvenTempControl__SetLevel(TEMP_LEVEL_OVEN_OFF);
-				   Hal__SetBuzzerFreq(4000);
-				   Sounds__PlaySounds(SOUND_KEY_PRESS);    //buzzer de key press
-				   Timer__HMSSet(TIMER_HMS_CYCLE_DURATION, 0,0,0);
-				   Trigger = FALSE;
-				   break;
+	User_Action = Display__GetEvent();
+	if (User_Action != EVENTS_NO_EVENT)
+	{
+		switch(User_Action)
+		{
+			case KEY_OFF_EVENT:
+			Display__SetState(OVEN_OFF);
+			OvenTempControl__SetLevel(TEMP_LEVEL_OVEN_OFF);
+		    Hal__SetBuzzerFreq(4000);
+			Sounds__PlaySounds(SOUND_KEY_PRESS);    //buzzer de key press
+			Timer__HMSSet(TIMER_HMS_CYCLE_DURATION, 0,0,0);
+			Trigger = FALSE;
+			break;
 				
-			    case KEY_MIN_EVENT:
-			          Display__SetState(OVEN_MIN);
-					  OvenTempControl__SetLevel(TEMP_LEVEL_MIN);
-					  Hal__SetBuzzerFreq(2000);
-					  Sounds__PlaySounds(SOUND_KEY_PRESS);    //buzzer de key press
+			case KEY_MIN_EVENT:
+			Display__SetState(OVEN_MIN);
+			OvenTempControl__SetLevel(TEMP_LEVEL_MIN);
+			Hal__SetBuzzerFreq(2000);
+			Sounds__PlaySounds(SOUND_KEY_PRESS);    //buzzer de key press
 					  Timer__HMSSet(TIMER_HMS_CYCLE_DURATION, OVEN_MIN_ON_TIME_HRS, OVEN_MIN_ON_TIME_MIN, OVEN_MIN_ON_TIME_SEC);
 					  Trigger = TRUE;
 				      break;
@@ -118,11 +142,6 @@ void Appl__Handler(void)
 					  Timer__HMSSet(TIMER_HMS_CYCLE_DURATION, OVEN_MAX_ON_TIME_HRS, OVEN_MAX_ON_TIME_MIN, OVEN_MAX_ON_TIME_SEC);
 					  Trigger = TRUE;
 				      break;
-				//case KEY_NONE:
-				//     Sounds__PlaySounds(PLAY_NO_SOUND);    //buzzer de key press
-				//	 Timer__HMSSet(TIMER_HMS_CYCLE_DURATION, 0,0,0);
-				//	 Trigger = FALSE;  
-			  	//	 break;
 			     default:
 				    break;
 
@@ -139,78 +158,7 @@ if( (Trigger == TRUE ) &&
 	Trigger = FALSE;
 	}
 
-#endif //(EXP_OVEN == ENABLED)
-
-#if (EXP_TIMER == ENABLED)
-Timer_Counter--;
-switch(Toggle)
-{
-	case ON:
-	Hal__SetLed(LED_0, LED_ON);  
-	Hal__SetLed(LED_1, LED_ON); 
-	Hal__SetLed(LED_2, LED_ON); 
-	if(Timer_Counter == 0)
-		{
-		Timer_Counter = TIME_IN_50MS_BASE;
-		Toggle = OFF;
-		}
-	break;
-
-	case OFF:
-	Hal__SetLed(LED_0, LED_OFF);
-	Hal__SetLed(LED_1, LED_OFF);
-	Hal__SetLed(LED_2, LED_OFF);
-	if(Timer_Counter == 0)
-		{
-		Timer_Counter = TIME_IN_50MS_BASE;
-		Toggle = ON;
-		}
-	break;
-	default:
-	Toggle = ON;
-	break;
-}
-#endif //(EXP_TIMER == ENABLED)
-
-#if (EXP_TIMER1 == ENABLED)
-
-switch(Toggle)
-{
-	case ON:
-	
-	if(Timer__HMSGetStatus(TIMER_HMS_TEST1)== TIMER_EXPIRED )
-		{
-		Timer__HMSSet(TIMER_HMS_TEST1,0,0,60);
-		Toggle = OFF;
-		Hal__SetBuzzer(OFF);
-		Hal__SetLed(LED_0, LED_ON);
-		Hal__SetLed(LED_1, LED_ON);
-		Hal__SetLed(LED_2, LED_ON);
-		}
-	break;
-
-	case OFF:
-	//Hal__SetBuzzer(ON);
-	
-	if(Timer__HMSGetStatus(TIMER_HMS_TEST1)== TIMER_EXPIRED )
-		{
-		Timer__HMSSet(TIMER_HMS_TEST1,0,0,60);
-		Toggle = ON;
-		Hal__SetBuzzerFreq(4000);
-		Hal__SetBuzzer(ON);
-		Hal__SetLed(LED_0, LED_OFF);
-		Hal__SetLed(LED_1, LED_OFF);
-		Hal__SetLed(LED_2, LED_OFF);
-		}
-	break;
-	default:
-	Toggle = ON;
-	break;
-
-}
-#endif	//(EXP_TIMER1 == ENABLED)
-
-}   // fim do Appl_Handler()
+}   // fim do Appl_Handler()*/
 
 //---------------------------------------------------------------------------------------------------------------------
 

@@ -123,19 +123,19 @@ void Appl__Initialize(void)
 
 000000c2 <Appl__Handler>:
 
+
 void Appl__Handler(void)
 {//unsigned short int ad_value;
 	
-#if (EXP_OVEN == ENABLED)
-          User_Action = Display__GetEvent();
+	User_Action = Display__GetEvent();
       c2:	0e 94 9b 06 	call	0xd36	; 0xd36 <Display__GetEvent>
       c6:	80 93 6b 01 	sts	0x016B, r24	; 0x80016b <User_Action>
-		   if (User_Action != EVENTS_NO_EVENT)
+	if (User_Action != EVENTS_NO_EVENT)
       ca:	8f 3f       	cpi	r24, 0xFF	; 255
       cc:	09 f4       	brne	.+2      	; 0xd0 <Appl__Handler+0xe>
       ce:	63 c0       	rjmp	.+198    	; 0x196 <Appl__Handler+0xd4>
-		    {
-			switch(User_Action)
+	{
+		switch(User_Action)
       d0:	81 30       	cpi	r24, 0x01	; 1
       d2:	e9 f0       	breq	.+58     	; 0x10e <Appl__Handler+0x4c>
       d4:	30 f0       	brcs	.+12     	; 0xe2 <Appl__Handler+0x20>
@@ -145,44 +145,44 @@ void Appl__Handler(void)
       dc:	09 f4       	brne	.+2      	; 0xe0 <Appl__Handler+0x1e>
       de:	45 c0       	rjmp	.+138    	; 0x16a <Appl__Handler+0xa8>
       e0:	5a c0       	rjmp	.+180    	; 0x196 <Appl__Handler+0xd4>
-			    {
-			    case KEY_OFF_EVENT:
-				   Display__SetState(OVEN_OFF);
+		{
+			case KEY_OFF_EVENT:
+			Display__SetState(OVEN_OFF);
       e2:	80 e0       	ldi	r24, 0x00	; 0
       e4:	0e 94 37 06 	call	0xc6e	; 0xc6e <Display__SetState>
-				   OvenTempControl__SetLevel(TEMP_LEVEL_OVEN_OFF);
+			OvenTempControl__SetLevel(TEMP_LEVEL_OVEN_OFF);
       e8:	83 e0       	ldi	r24, 0x03	; 3
       ea:	0e 94 82 01 	call	0x304	; 0x304 <OvenTempControl__SetLevel>
-				   Hal__SetBuzzerFreq(4000);
+		    Hal__SetBuzzerFreq(4000);
       ee:	80 ea       	ldi	r24, 0xA0	; 160
       f0:	9f e0       	ldi	r25, 0x0F	; 15
       f2:	0e 94 e6 04 	call	0x9cc	; 0x9cc <Hal__SetBuzzerFreq>
-				   Sounds__PlaySounds(SOUND_KEY_PRESS);    //buzzer de key press
+			Sounds__PlaySounds(SOUND_KEY_PRESS);    //buzzer de key press
       f6:	81 e0       	ldi	r24, 0x01	; 1
       f8:	0e 94 2c 07 	call	0xe58	; 0xe58 <Sounds__PlaySounds>
-				   Timer__HMSSet(TIMER_HMS_CYCLE_DURATION, 0,0,0);
+			Timer__HMSSet(TIMER_HMS_CYCLE_DURATION, 0,0,0);
       fc:	20 e0       	ldi	r18, 0x00	; 0
       fe:	40 e0       	ldi	r20, 0x00	; 0
      100:	60 e0       	ldi	r22, 0x00	; 0
      102:	85 e0       	ldi	r24, 0x05	; 5
      104:	0e 94 0f 04 	call	0x81e	; 0x81e <Timer__HMSSet>
-				   Trigger = FALSE;
+			Trigger = FALSE;
      108:	10 92 6d 01 	sts	0x016D, r1	; 0x80016d <Trigger>
-				   break;
+			break;
      10c:	44 c0       	rjmp	.+136    	; 0x196 <Appl__Handler+0xd4>
 				
-			    case KEY_MIN_EVENT:
-			          Display__SetState(OVEN_MIN);
+			case KEY_MIN_EVENT:
+			Display__SetState(OVEN_MIN);
      10e:	81 e0       	ldi	r24, 0x01	; 1
      110:	0e 94 37 06 	call	0xc6e	; 0xc6e <Display__SetState>
-					  OvenTempControl__SetLevel(TEMP_LEVEL_MIN);
+			OvenTempControl__SetLevel(TEMP_LEVEL_MIN);
      114:	80 e0       	ldi	r24, 0x00	; 0
      116:	0e 94 82 01 	call	0x304	; 0x304 <OvenTempControl__SetLevel>
-					  Hal__SetBuzzerFreq(2000);
+			Hal__SetBuzzerFreq(2000);
      11a:	80 ed       	ldi	r24, 0xD0	; 208
      11c:	97 e0       	ldi	r25, 0x07	; 7
      11e:	0e 94 e6 04 	call	0x9cc	; 0x9cc <Hal__SetBuzzerFreq>
-					  Sounds__PlaySounds(SOUND_KEY_PRESS);    //buzzer de key press
+			Sounds__PlaySounds(SOUND_KEY_PRESS);    //buzzer de key press
      122:	81 e0       	ldi	r24, 0x01	; 1
      124:	0e 94 2c 07 	call	0xe58	; 0xe58 <Sounds__PlaySounds>
 					  Timer__HMSSet(TIMER_HMS_CYCLE_DURATION, OVEN_MIN_ON_TIME_HRS, OVEN_MIN_ON_TIME_MIN, OVEN_MIN_ON_TIME_SEC);
