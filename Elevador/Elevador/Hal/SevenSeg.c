@@ -6,9 +6,9 @@
  */ 
 #include <avr/io.h> 
 
-#include <Z:\Elevador\Header\Micro.h>
-#include <Z:\Elevador\Header\SevenSeg.h>
-#include <Z:\Elevador\Header\Gpio.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\Micro.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\SevenSeg.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\Gpio.h>
 
 /* Segment byte maps for numbers 0 to 9 */
 const char SEGMENT_MAP_DIGIT[] = {0xC0,0xF9,0xA4,0xB0,0x99,0x92,0x82,0xF8,0X80,0X90};

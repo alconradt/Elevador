@@ -8,9 +8,9 @@
 
 
 //-------------------------------------- Include Files ----------------------------------------------------------------
-#include <Z:\Elevador\Header\C_Types.h>
-#include <Z:\Elevador\Header\Display.h>
-#include <Z:\Elevador\Header\Hal.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\C_Types.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\Display.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\Hal.h>
 //#include "LcdMgr.h"
 //#include "Timer.h"
 //-------------------------------------- PUBLIC (Variables) -----------------------------------------------------------

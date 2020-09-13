@@ -8,17 +8,17 @@
 #ifndef MAIN_PRM_H_
 #define MAIN_PRM_H_
 //-------------------------------------- Include Files ----------------------------------------------------------------
-#include <Z:\Elevador\Header\C_Types.h>
-#include <Z:\Elevador\Header\Appl.h>
-#include <Z:\Elevador\Header\Display.h>
-#include <Z:\Elevador\Header\Gpio.h>
-#include <Z:\Elevador\Header\Adc.h>
-#include <Z:\Elevador\Header\Timer.h>
-#include <Z:\Elevador\Header\Hal.h>
-#include <Z:\Elevador\Header\TempSensor.h>
-#include <Z:\Elevador\Header\OvenTempControl.h>
-#include <Z:\Elevador\Header\Pwm.h>
-#include <Z:\Elevador\Header\Sounds.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\C_Types.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\Appl.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\Display.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\Gpio.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\Adc.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\Timer.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\Hal.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\TempSensor.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\OvenTempControl.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\Pwm.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\Sounds.h>
 //-------------------------------------- Defines ----------------------------------------------------------------
 
 // Select ENALBED to use a fixed slot time duration for each main slot, otherwise select DISABLED

@@ -10,8 +10,8 @@
 #define Pwm_H_
 
 //-------------------------------------- Include Files ----------------------------------------------------------------
-#include <Z:\Elevador\Header\Micro.h>
-#include <Z:\Elevador\Header\Sounds.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\Micro.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\Sounds.h>
 //**********ver SE não é Sounds_prm.h ********
 
 

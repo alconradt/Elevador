@@ -7,10 +7,10 @@
 
 //-------------------------------------- Include Files ----------------------------------------------------------------
 #include <avr/io.h> //definições do componente especificado 
-#include <Z:\Elevador\Header\C_Types.h>
-#include <Z:\Elevador\Header\Adc.h>
-#include <Z:\Elevador\Header\Gpio.h>
-#include <Z:\Elevador\Header\Hal.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\C_Types.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\Adc.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\Gpio.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\Hal.h>
  
 //-------------------------------------- PUBLIC (Variables) -----------------------------------------------------------
 

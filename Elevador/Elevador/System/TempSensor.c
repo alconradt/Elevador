@@ -6,9 +6,9 @@
  */
 
 //-------------------------------------- Include Files ----------------------------------------------------------------
-#include <Z:\Elevador\Header\C_Types.h>
-#include <Z:\Elevador\Header\TempSensor.h>
-#include <Z:\Elevador\Header\Hal.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\C_Types.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\TempSensor.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\Hal.h>
 //-------------------------------------- PUBLIC (Variables) -----------------------------------------------------------
 
 unsigned short int Temperature[NUM_OF_TEMP_SENSOR];

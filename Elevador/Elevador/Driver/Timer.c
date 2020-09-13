@@ -7,8 +7,8 @@
 
 //-------------------------------------- Include Files ----------------------------------------------------------------
 #include <avr/interrupt.h>
-#include <Z:\Elevador\Header\C_Types.h>
-#include <Z:\Elevador\Header\Timer.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\C_Types.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\Timer.h>
 #include <util/delay.h>   //para incluir rotina _delay_ms()
 
 //------------------------- Variáveis Globais---------------------

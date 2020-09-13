@@ -8,17 +8,17 @@
 //-------------------------------------- Include Files ----------------------------------------------------------------
 
 #include <Z:\Elevador\Elevador\Elevador\Header\C_Types.h>
-#include <Z:\Elevador\Header\Appl.h>
-#include <Z:\Elevador\Header\Display.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\Appl.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\Display.h>
 //#include <alloca.h>
-#include <Z:\Elevador\Header\Gpio.h>
-#include <Z:\Elevador\Header\Adc.h>
-#include <Z:\Elevador\Header\Timer.h>
-#include <Z:\Elevador\Header\Hal.h>
-#include <Z:\Elevador\Header\OvenTempControl.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\Gpio.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\Adc.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\Timer.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\Hal.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\OvenTempControl.h>
 
-#include <Z:\Elevador\Header\Pwm.h>
-#include <Z:\Elevador\Header\Sounds.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\Pwm.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\Sounds.h>
 
 //-------------------------------------- PUBLIC (Variables) -----------------------------------------------------------
 KEY_EVENT_TYPE User_Action;

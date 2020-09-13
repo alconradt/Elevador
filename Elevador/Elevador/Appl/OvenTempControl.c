@@ -5,9 +5,9 @@
  *      Author: MAASDN
  */
 //-------------------------------------- Include Files ----------------------------------------------------------------
-#include <Z:\Elevador\Header\C_Types.h>
-#include <Z:\Elevador\Header\TempSensor.h> 
-#include <Z:\Elevador\Header\OvenTempControl.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\C_Types.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\TempSensor.h> 
+#include <Z:\Elevador\Elevador\Elevador\Header\OvenTempControl.h>
 //-------------------------------------- PUBLIC (Variables) -----------------------------------------------------------
 
 
