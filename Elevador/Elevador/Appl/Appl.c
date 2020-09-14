@@ -16,7 +16,7 @@
 #include <Z:\Elevador\Elevador\Elevador\Header\Timer.h>
 #include <Z:\Elevador\Elevador\Elevador\Header\Hal.h>
 #include <Z:\Elevador\Elevador\Elevador\Header\OvenPositionControl.h>
-
+#include <Z:\Elevador\Elevador\Elevador\Header\PortSensor.h>
 #include <Z:\Elevador\Elevador\Elevador\Header\Pwm.h>
 #include <Z:\Elevador\Elevador\Elevador\Header\Sounds.h>
 
@@ -100,12 +100,12 @@ void Appl__Handler(void)
 				Sounds__PlaySounds(SOUND_KEY_PRESS);
 				if (Floor_position == GROUND_STATE)
 				{
-					Display__SetState(DOOR_CLOSE);
+					PortSensor__Movie(CLOSED);
 					OvenPosition__SetSolicitation(FIRST);
 				}
 				if (Floor_position == FIRST_STATE)
 				{
-					Display__SetState(DOOR_CLOSE);
+					PortSensor__Movie(CLOSED);
 					OvenPosition__SetSolicitation(GROUND);
 				}
 			break;

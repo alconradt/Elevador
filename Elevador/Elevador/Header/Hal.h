@@ -26,6 +26,7 @@
 #define  ENABLED        1
 
 #define ACENDE_LED      0
+#define APAGA_LED       1
 
 
 

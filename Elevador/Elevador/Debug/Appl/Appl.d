@@ -28,6 +28,8 @@ Appl/Appl.d Appl/Appl.o: ../Appl/Appl.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
  Z:\Elevador\Elevador\Elevador\Header\OvenPositionControl_prm.h \
+ Z:\Elevador\Elevador\Elevador\Header\PortSensor.h \
+ Z:\Elevador\Elevador\Elevador\Header\PortSensor_prm.h \
  Z:\Elevador\Elevador\Elevador\Header\Pwm.h \
  Z:\Elevador\Elevador\Elevador\Header\Sounds.h \
  Z:\Elevador\Elevador\Elevador\Header\Sound_prm.h
@@ -89,6 +91,10 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:
 
 Z:\Elevador\Elevador\Elevador\Header\OvenPositionControl_prm.h:
+
+Z:\Elevador\Elevador\Elevador\Header\PortSensor.h:
+
+Z:\Elevador\Elevador\Elevador\Header\PortSensor_prm.h:
 
 Z:\Elevador\Elevador\Elevador\Header\Pwm.h:
 

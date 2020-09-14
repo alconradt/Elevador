@@ -10,6 +10,7 @@
 #include <Z:\Elevador\Elevador\Elevador\Header\Display.h>
 #include <Z:\Elevador\Elevador\Elevador\Header\Sounds.h>
 #include <Z:\Elevador\Elevador\Elevador\Header\PositionSensor.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\PortSensor.h>
 #include <Z:\Elevador\Elevador\Elevador\Header\OvenPositionControl.h>
 
 //-------------------------------------- Global Variables ----------------------------------------------------------------
@@ -68,10 +69,11 @@ void OvenPositionControl__Handler(void)
 	switch(Oven_PositionControl_State)
 	{
 		case OVEN_INSIDE:
-			Display__SetState(DOOR_OPEN);
+			Display__SetState(STOPED);
+			PortSensor__Movie(OPEN);
 			if (Door_state = SECOND_OPEN)
 			{
-				Display__SetState(DOOR_CLOSE);
+				PortSensor__Movie(CLOSED);
 			}
 			else
 			{

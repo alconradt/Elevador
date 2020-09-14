@@ -8,6 +8,8 @@ Appl/OvenPositionControl.d Appl/OvenPositionControl.o: \
  Z:\Elevador\Elevador\Elevador\Header\Sound_prm.h \
  Z:\Elevador\Elevador\Elevador\Header\PositionSensor.h \
  Z:\Elevador\Elevador\Elevador\Header\PositionSensor_prm.h \
+ Z:\Elevador\Elevador\Elevador\Header\PortSensor.h \
+ Z:\Elevador\Elevador\Elevador\Header\PortSensor_prm.h \
  Z:\Elevador\Elevador\Elevador\Header\OvenPositionControl.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
@@ -32,6 +34,10 @@ Z:\Elevador\Elevador\Elevador\Header\Sound_prm.h:
 Z:\Elevador\Elevador\Elevador\Header\PositionSensor.h:
 
 Z:\Elevador\Elevador\Elevador\Header\PositionSensor_prm.h:
+
+Z:\Elevador\Elevador\Elevador\Header\PortSensor.h:
+
+Z:\Elevador\Elevador\Elevador\Header\PortSensor_prm.h:
 
 Z:\Elevador\Elevador\Elevador\Header\OvenPositionControl.h:
 

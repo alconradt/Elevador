@@ -22,6 +22,8 @@ Hal\SevenSeg.c
 
 System\Display.c
 
+System\PortSensor.c
+
 System\PositionSensor.c
 
 System\Sounds.c

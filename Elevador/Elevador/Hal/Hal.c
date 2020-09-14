@@ -45,7 +45,7 @@ HAL_GPIO_TYPE KEYS_GPIO[NUM_OF_KEYS] =
   {PORT_C,SW1},    //!SW1
   {PORT_C,SW2},    //!SW2
   {PORT_C,SW3},    //!SW3
-  {PORT_B,SW4},    //!SW4 acrescido externamente 20/05/19  Ana   *****TEM QUE VER SE TEM QUE MUDAR!!!!!
+  {PORT_D,SW4},    //!SW4 acrescido externamente 20/05/19  Ana   *****TEM QUE VER SE TEM QUE MUDAR!!!!!
  };
 
 

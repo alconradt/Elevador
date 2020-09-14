@@ -108,30 +108,25 @@ void UpdateDisplayLeds(void)
 		case STOPED:
 			Hal__SetLed(LED_0, APAGA_LED);
 			Hal__SetLed(LED_1, APAGA_LED);
-			Hal__SetLed(LED_2, ACENDE_LED);
 	    break;
 		
 		case MOTOR_UP:
 			Hal__SetLed(LED_0, ACENDE_LED);
 			Hal__SetLed(LED_1, APAGA_LED);
-			Hal__SetLed(LED_2, ACENDE_LED);
 	    break;
 		
 		case MOTOR_DOWN:
 			Hal__SetLed(LED_0, APAGA_LED);
 			Hal__SetLed(LED_1, ACENDE_LED);
-			Hal__SetLed(LED_2, ACENDE_LED);
 		break;
 		
 		case DOOR_OPEN:
 			Hal__SetLed(LED_0, APAGA_LED);
 			Hal__SetLed(LED_1, APAGA_LED);
-			Hal__SetLed(LED_2, APAGA_LED);
 		break;
 		case DOOR_CLOSE:
 			Hal__SetLed(LED_0, APAGA_LED);
 			Hal__SetLed(LED_1, APAGA_LED);
-			Hal__SetLed(LED_2, ACENDE_LED);
 		break;
 		
 		default:

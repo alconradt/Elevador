@@ -184,6 +184,12 @@
     <Compile Include="Header\OvenPositionControl_prm.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Header\PortSensor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Header\PortSensor_prm.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Header\PositionSensor.h">
       <SubType>compile</SubType>
     </Compile>
@@ -209,6 +215,9 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="System\Display.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="System\PortSensor.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="System\PositionSensor.c">

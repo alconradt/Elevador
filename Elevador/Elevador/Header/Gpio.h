@@ -38,7 +38,7 @@ variável Y (complementa)*/
 #define SW1  PC1 //SW1  é o substituto de PC1 na programação   
 #define SW2  PC2 //SW2  é o substituto de PC2 na programação
 #define SW3  PC3 //SW3  é o substituto de PC3 na programação
-#define SW4  PB1 //SW4  COLOCADO EXTERNAMENTE
+#define SW4  PD0 //SW4  COLOCADO EXTERNAMENTE
 // 7 segmentos
 #define LATCH_PIN     PD4   // pino 11 (shiftclk do 74HC595)
 #define CLK_PIN       PD7   // pino 12 (latchclk do 74HC595)
