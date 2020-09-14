@@ -35,8 +35,7 @@ typedef enum
 typedef enum
 {
 	GROUND_FLOOR = 0,
-	FIRST_FLOOR,
-	NUM_OF_KEYS_EVENTS
+	FIRST_FLOOR
 }FLOOR_TYPE;
 
 #define KEY_NONE		0xAA

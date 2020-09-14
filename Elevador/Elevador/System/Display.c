@@ -10,6 +10,8 @@
 #include <Z:\Elevador\Elevador\Elevador\Header\C_Types.h>
 #include <Z:\Elevador\Elevador\Elevador\Header\Display.h>
 #include <Z:\Elevador\Elevador\Elevador\Header\Hal.h>S
+#include <Z:\Elevador\Elevador\Elevador\Header\PositionSensor.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\OvenPositionControl.h>
 //-------------------------------------- PUBLIC (Variables) -----------------------------------------------------------
 
 
@@ -104,30 +106,32 @@ void UpdateDisplayLeds(void)
 	switch(Oven_Display_State)
 	{
 		case STOPED:
-			Hal__SetAllLeds(LED_OFF);
+			Hal__SetLed(LED_0, APAGA_LED);
+			Hal__SetLed(LED_1, APAGA_LED);
+			Hal__SetLed(LED_2, ACENDE_LED);
 	    break;
 		
 		case MOTOR_UP:
 			Hal__SetLed(LED_0, ACENDE_LED);
 			Hal__SetLed(LED_1, APAGA_LED);
-			Hal__SetLed(LED_2, APAGA_LED);
+			Hal__SetLed(LED_2, ACENDE_LED);
 	    break;
 		
 		case MOTOR_DOWN:
 			Hal__SetLed(LED_0, APAGA_LED);
 			Hal__SetLed(LED_1, ACENDE_LED);
-			Hal__SetLed(LED_2, APAGA_LED);
+			Hal__SetLed(LED_2, ACENDE_LED);
 		break;
 		
 		case DOOR_OPEN:
 			Hal__SetLed(LED_0, APAGA_LED);
 			Hal__SetLed(LED_1, APAGA_LED);
-			Hal__SetLed(LED_2, ACENDE_LED);
+			Hal__SetLed(LED_2, APAGA_LED);
 		break;
 		case DOOR_CLOSE:
 			Hal__SetLed(LED_0, APAGA_LED);
 			Hal__SetLed(LED_1, APAGA_LED);
-			Hal__SetLed(LED_2, APAGA_LED);
+			Hal__SetLed(LED_2, ACENDE_LED);
 		break;
 		
 		default:
@@ -169,6 +173,18 @@ void UpdateDisplaySevenSeg(void)
 {
 	char i;
 	char *p_digito;
+	unsigned short int current_floor;
+	
+	current_floor = PositionSensor__GetMeters(POSITION_SENSOR_1);
+	if(POSITION_GROUND_MAX >= current_floor)
+	{
+		Segment_Floor_State = GROUND_FLOOR;
+	}
+	else
+	{
+		Segment_Floor_State = FIRST_FLOOR;
+	}
+	
 	switch(Segment_Floor_State)
 	{
 	case GROUND_FLOOR:

@@ -5,7 +5,7 @@ c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/..
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
                               C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5/crtatmega328p.o (exit)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
-                              Appl/OvenTempControl.o (__do_copy_data)
+                              Driver/Adc.o (__do_copy_data)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
                               Appl/Appl.o (__do_clear_bss)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
@@ -15,13 +15,20 @@ Allocating common symbols
 Common symbol       size              file
 
 Hms_1sec_Counter    0x2               Driver/Timer.o
+Position            0x4               System/PositionSensor.o
+Door_state          0x1               Appl/OvenPositionControl.o
 AD_Channel          0x1               Hal/Hal.o
+Floor_position      0x1               Appl/Appl.o
 ADC_Buffer          0xc               Driver/Adc.o
 Adc_Step            0x1               Driver/Adc.o
-Temperature         0x4               System/TempSensor.o
+Oven_PositionControl_State
+                    0x1               Appl/OvenPositionControl.o
 Hal_Leds_Buffer     0x4               Hal/Hal.o
-Current_Level       0x1               Appl/OvenTempControl.o
+Segment_Floor_State
+                    0x1               System/Display.o
 PlaySound           0x1               System/Sounds.o
+Oven_PositionControl_Solicitation
+                    0x1               Appl/OvenPositionControl.o
 Display_Keys_Map    0x1               System/Display.o
 End_Cycle_Sound_Step
                     0x1               System/Sounds.o
@@ -31,6 +38,7 @@ AD_Mux_State        0x1               Hal/Hal.o
 User_Action         0x1               Appl/Appl.o
 AD_Counter          0x6               Hal/Hal.o
 Hal_Keys_Buffer     0x1               Hal/Hal.o
+current_position    0x2               Appl/OvenPositionControl.o
 PowerON_Sound_Step  0x1               System/Sounds.o
 Key_Press_Sound_Step
                     0x1               System/Sounds.o
@@ -38,8 +46,6 @@ Timer_Counter       0x1               Appl/Appl.o
 Sampling_Time       0x1               Driver/Adc.o
 Trigger             0x1               Appl/Appl.o
 Toggle              0x1               Appl/Appl.o
-Oven_TempControl_State
-                    0x1               Appl/OvenTempControl.o
 Slot                0x1               Appl/main.o
 Adc_Channel         0x1               Driver/Adc.o
 Oven_Display_State  0x1               System/Display.o
@@ -57,11 +63,9 @@ Discarded input sections
  .text          0x00000000        0x0 Appl/main.o
  .data          0x00000000        0x0 Appl/main.o
  .bss           0x00000000        0x0 Appl/main.o
- .text          0x00000000        0x0 Appl/OvenTempControl.o
- .data          0x00000000        0x0 Appl/OvenTempControl.o
- .bss           0x00000000        0x0 Appl/OvenTempControl.o
- .text.OvenTempControl__GetState
-                0x00000000        0x6 Appl/OvenTempControl.o
+ .text          0x00000000        0x0 Appl/OvenPositionControl.o
+ .data          0x00000000        0x0 Appl/OvenPositionControl.o
+ .bss           0x00000000        0x0 Appl/OvenPositionControl.o
  .text          0x00000000        0x0 Driver/Adc.o
  .data          0x00000000        0x0 Driver/Adc.o
  .bss           0x00000000        0x0 Driver/Adc.o
@@ -101,6 +105,15 @@ Discarded input sections
  .text          0x00000000        0x0 System/Display.o
  .data          0x00000000        0x0 System/Display.o
  .bss           0x00000000        0x0 System/Display.o
+ .text.Display__Handler
+                0x00000000        0xe System/Display.o
+ .text          0x00000000        0x0 System/PositionSensor.o
+ .data          0x00000000        0x0 System/PositionSensor.o
+ .bss           0x00000000        0x0 System/PositionSensor.o
+ .rodata.PositionSensor_Enable_Table
+                0x00000000        0x2 System/PositionSensor.o
+ .rodata.PositionSensorTable
+                0x00000000        0x2 System/PositionSensor.o
  .text          0x00000000        0x0 System/Sounds.o
  .data          0x00000000        0x0 System/Sounds.o
  .bss           0x00000000        0x0 System/Sounds.o
@@ -108,13 +121,6 @@ Discarded input sections
                 0x00000000        0x6 System/Sounds.o
  .bss.EndCycleSound_Counter
                 0x00000000        0x1 System/Sounds.o
- .text          0x00000000        0x0 System/TempSensor.o
- .data          0x00000000        0x0 System/TempSensor.o
- .bss           0x00000000        0x0 System/TempSensor.o
- .rodata.TempSensor_Enable_Table
-                0x00000000        0x2 System/TempSensor.o
- .rodata.TempSensorTable
-                0x00000000        0x2 System/TempSensor.o
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
@@ -210,7 +216,7 @@ Address of section .data set to 0x800100
 LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5/crtatmega328p.o
 LOAD Appl/Appl.o
 LOAD Appl/main.o
-LOAD Appl/OvenTempControl.o
+LOAD Appl/OvenPositionControl.o
 LOAD Driver/Adc.o
 LOAD Driver/Gpio.o
 LOAD Driver/Pwm.o
@@ -218,8 +224,8 @@ LOAD Driver/Timer.o
 LOAD Hal/Hal.o
 LOAD Hal/SevenSeg.o
 LOAD System/Display.o
+LOAD System/PositionSensor.o
 LOAD System/Sounds.o
-LOAD System/TempSensor.o
 START GROUP
 LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a
 END GROUP
@@ -329,7 +335,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x10f8
+.text           0x00000000      0xfe8
  *(.vectors)
  .vectors       0x00000000       0x68 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5/crtatmega328p.o
                 0x00000000                __vector_default
@@ -419,166 +425,163 @@ END GROUP
                 0x000000a6       0x1c Appl/Appl.o
                 0x000000a6                Appl__Initialize
  .text.Appl__Handler
-                0x000000c2      0x102 Appl/Appl.o
+                0x000000c2       0x84 Appl/Appl.o
                 0x000000c2                Appl__Handler
- .text.main     0x000001c4       0xb2 Appl/main.o
-                0x000001c4                main
- .text.OvenTempControl__Initialize
-                0x00000276        0xc Appl/OvenTempControl.o
-                0x00000276                OvenTempControl__Initialize
- .text.OvenTempControl__Handler
-                0x00000282       0x82 Appl/OvenTempControl.o
-                0x00000282                OvenTempControl__Handler
- .text.OvenTempControl__SetLevel
-                0x00000304        0x6 Appl/OvenTempControl.o
-                0x00000304                OvenTempControl__SetLevel
+ .text.main     0x00000146       0xbc Appl/main.o
+                0x00000146                main
+ .text.OvenPositionControl__Initialize
+                0x00000202        0x6 Appl/OvenPositionControl.o
+                0x00000202                OvenPositionControl__Initialize
+ .text.OvenPosition__SetSolicitation
+                0x00000208       0x4a Appl/OvenPositionControl.o
+                0x00000208                OvenPosition__SetSolicitation
+ .text.OvenPositionControl__Handler
+                0x00000252       0x40 Appl/OvenPositionControl.o
+                0x00000252                OvenPositionControl__Handler
  .text.ADC__Initialize
-                0x0000030a       0x52 Driver/Adc.o
-                0x0000030a                ADC__Initialize
+                0x00000292       0x52 Driver/Adc.o
+                0x00000292                ADC__Initialize
  .text.ADC__Handler
-                0x0000035c       0xd8 Driver/Adc.o
-                0x0000035c                ADC__Handler
+                0x000002e4       0xd8 Driver/Adc.o
+                0x000002e4                ADC__Handler
  .text.ADC__ConfigModes
-                0x00000434       0x52 Driver/Adc.o
-                0x00000434                ADC__ConfigModes
+                0x000003bc       0x52 Driver/Adc.o
+                0x000003bc                ADC__ConfigModes
  .text.ADC__GetValue
-                0x00000486       0x1c Driver/Adc.o
-                0x00000486                ADC__GetValue
+                0x0000040e       0x1c Driver/Adc.o
+                0x0000040e                ADC__GetValue
  .text.Gpio__PinConfig
-                0x000004a2       0x6c Driver/Gpio.o
-                0x000004a2                Gpio__PinConfig
+                0x0000042a       0x6c Driver/Gpio.o
+                0x0000042a                Gpio__PinConfig
  .text.Gpio__PinWrite
-                0x0000050e       0x54 Driver/Gpio.o
-                0x0000050e                Gpio__PinWrite
+                0x00000496       0x54 Driver/Gpio.o
+                0x00000496                Gpio__PinWrite
  .text.Gpio__PinRead
-                0x00000562       0x28 Driver/Gpio.o
-                0x00000562                Gpio__PinRead
+                0x000004ea       0x28 Driver/Gpio.o
+                0x000004ea                Gpio__PinRead
  .text.Pwm__SetTCFrequency
-                0x0000058a      0x148 Driver/Pwm.o
-                0x0000058a                Pwm__SetTCFrequency
+                0x00000512      0x148 Driver/Pwm.o
+                0x00000512                Pwm__SetTCFrequency
  .text.Pwm__Initialize
-                0x000006d2       0x20 Driver/Pwm.o
-                0x000006d2                Pwm__Initialize
+                0x0000065a       0x20 Driver/Pwm.o
+                0x0000065a                Pwm__Initialize
  .text.Pwm__SetDutyCycle
-                0x000006f2       0xa2 Driver/Pwm.o
-                0x000006f2                Pwm__SetDutyCycle
+                0x0000067a       0xa2 Driver/Pwm.o
+                0x0000067a                Pwm__SetDutyCycle
  .text.Timer__Initialize
-                0x00000794       0x30 Driver/Timer.o
-                0x00000794                Timer__Initialize
+                0x0000071c       0x30 Driver/Timer.o
+                0x0000071c                Timer__Initialize
  .text.Timer__HMSHandler
-                0x000007c4       0x5a Driver/Timer.o
-                0x000007c4                Timer__HMSHandler
+                0x0000074c       0x5a Driver/Timer.o
+                0x0000074c                Timer__HMSHandler
  .text.Timer__HMSSet
-                0x0000081e       0x36 Driver/Timer.o
-                0x0000081e                Timer__HMSSet
+                0x000007a6       0x36 Driver/Timer.o
+                0x000007a6                Timer__HMSSet
  .text.Timer__HMSGetStatus
-                0x00000854       0x12 Driver/Timer.o
-                0x00000854                Timer__HMSGetStatus
+                0x000007dc       0x12 Driver/Timer.o
+                0x000007dc                Timer__HMSGetStatus
  .text.__vector_13
-                0x00000866       0x36 Driver/Timer.o
-                0x00000866                __vector_13
+                0x000007ee       0x36 Driver/Timer.o
+                0x000007ee                __vector_13
  .text.Hal__SetLed
-                0x0000089c       0x1c Hal/Hal.o
-                0x0000089c                Hal__SetLed
+                0x00000824       0x1c Hal/Hal.o
+                0x00000824                Hal__SetLed
  .text.Hal__SetAllLeds
-                0x000008b8       0x1e Hal/Hal.o
-                0x000008b8                Hal__SetAllLeds
+                0x00000840       0x1e Hal/Hal.o
+                0x00000840                Hal__SetAllLeds
  .text.Hal__Initialize
-                0x000008d6       0x9a Hal/Hal.o
-                0x000008d6                Hal__Initialize
+                0x0000085e       0x98 Hal/Hal.o
+                0x0000085e                Hal__Initialize
  .text.Hal__ReadKey
-                0x00000970       0x26 Hal/Hal.o
-                0x00000970                Hal__ReadKey
+                0x000008f6       0x26 Hal/Hal.o
+                0x000008f6                Hal__ReadKey
  .text.Hal__WriteValtoSegment
-                0x00000996        0x6 Hal/Hal.o
-                0x00000996                Hal__WriteValtoSegment
+                0x0000091c        0x6 Hal/Hal.o
+                0x0000091c                Hal__WriteValtoSegment
  .text.Hal__GetAnalogInput
-                0x0000099c       0x18 Hal/Hal.o
-                0x0000099c                Hal__GetAnalogInput
+                0x00000922       0x18 Hal/Hal.o
+                0x00000922                Hal__GetAnalogInput
  .text.Hal__SetBuzzer
-                0x000009b4       0x18 Hal/Hal.o
-                0x000009b4                Hal__SetBuzzer
+                0x0000093a       0x18 Hal/Hal.o
+                0x0000093a                Hal__SetBuzzer
  .text.Hal__SetBuzzerFreq
-                0x000009cc       0x12 Hal/Hal.o
-                0x000009cc                Hal__SetBuzzerFreq
+                0x00000952       0x12 Hal/Hal.o
+                0x00000952                Hal__SetBuzzerFreq
  .text.LEDsUpdate
-                0x000009de       0x7c Hal/Hal.o
-                0x000009de                LEDsUpdate
+                0x00000964       0x7c Hal/Hal.o
+                0x00000964                LEDsUpdate
  .text.KeysRead
-                0x00000a5a       0xae Hal/Hal.o
-                0x00000a5a                KeysRead
+                0x000009e0       0xae Hal/Hal.o
+                0x000009e0                KeysRead
  .text.Hal__FastHandler
-                0x00000b08        0xa Hal/Hal.o
-                0x00000b08                Hal__FastHandler
+                0x00000a8e        0xa Hal/Hal.o
+                0x00000a8e                Hal__FastHandler
  .text.ADProcess
-                0x00000b12       0xe8 Hal/Hal.o
-                0x00000b12                ADProcess
+                0x00000a98       0xe8 Hal/Hal.o
+                0x00000a98                ADProcess
  .text.Hal__BackgroundHandler
-                0x00000bfa        0x6 Hal/Hal.o
-                0x00000bfa                Hal__BackgroundHandler
+                0x00000b80        0x6 Hal/Hal.o
+                0x00000b80                Hal__BackgroundHandler
  .text.SevenSeg_WriteValueToSegment
-                0x00000c00       0x62 Hal/SevenSeg.o
-                0x00000c00                SevenSeg_WriteValueToSegment
+                0x00000b86       0x62 Hal/SevenSeg.o
+                0x00000b86                SevenSeg_WriteValueToSegment
  .text.Display__Initialize
-                0x00000c62        0xc System/Display.o
-                0x00000c62                Display__Initialize
+                0x00000be8        0x6 System/Display.o
+                0x00000be8                Display__Initialize
  .text.Display__SetState
-                0x00000c6e        0xa System/Display.o
-                0x00000c6e                Display__SetState
+                0x00000bee        0xa System/Display.o
+                0x00000bee                Display__SetState
  .text.UpdateDisplayLeds
-                0x00000c78       0x7a System/Display.o
-                0x00000c78                UpdateDisplayLeds
+                0x00000bf8       0xa0 System/Display.o
+                0x00000bf8                UpdateDisplayLeds
  .text.ReadDisplayKeys
-                0x00000cf2       0x44 System/Display.o
-                0x00000cf2                ReadDisplayKeys
+                0x00000c98       0x34 System/Display.o
+                0x00000c98                ReadDisplayKeys
  .text.Display__GetEvent
-                0x00000d36        0xa System/Display.o
-                0x00000d36                Display__GetEvent
+                0x00000ccc        0xa System/Display.o
+                0x00000ccc                Display__GetEvent
  .text.UpdateDisplaySevenSeg
-                0x00000d40       0xf4 System/Display.o
-                0x00000d40                UpdateDisplaySevenSeg
- .text.Display__Handler
-                0x00000e34        0xe System/Display.o
-                0x00000e34                Display__Handler
+                0x00000cd6       0x6a System/Display.o
+                0x00000cd6                UpdateDisplaySevenSeg
+ .text.PositionSensor__Initialize
+                0x00000d40        0xe System/PositionSensor.o
+                0x00000d40                PositionSensor__Initialize
+ .text.PositionSensor__ConversionHandler
+                0x00000d4e       0x10 System/PositionSensor.o
+                0x00000d4e                PositionSensor__ConversionHandler
+ .text.PositionSensor__GetMeters
+                0x00000d5e       0x1c System/PositionSensor.o
+                0x00000d5e                PositionSensor__GetMeters
  .text.Sounds__Initialize
-                0x00000e42       0x16 System/Sounds.o
-                0x00000e42                Sounds__Initialize
+                0x00000d7a       0x16 System/Sounds.o
+                0x00000d7a                Sounds__Initialize
  .text.Sounds__PlaySounds
-                0x00000e58       0x12 System/Sounds.o
-                0x00000e58                Sounds__PlaySounds
+                0x00000d90       0x12 System/Sounds.o
+                0x00000d90                Sounds__PlaySounds
  .text.PowerOnSoundHandler
-                0x00000e6a      0x110 System/Sounds.o
-                0x00000e6a                PowerOnSoundHandler
+                0x00000da2      0x110 System/Sounds.o
+                0x00000da2                PowerOnSoundHandler
  .text.KeyPressSoundHandler
-                0x00000f7a       0x4a System/Sounds.o
-                0x00000f7a                KeyPressSoundHandler
+                0x00000eb2       0x4a System/Sounds.o
+                0x00000eb2                KeyPressSoundHandler
  .text.EndCycleSoundHandler
-                0x00000fc4       0x4c System/Sounds.o
-                0x00000fc4                EndCycleSoundHandler
+                0x00000efc       0x4c System/Sounds.o
+                0x00000efc                EndCycleSoundHandler
  .text.Sounds__Background
-                0x00001010       0x4c System/Sounds.o
-                0x00001010                Sounds__Background
- .text.TempSensor__Initialize
-                0x0000105c        0xe System/TempSensor.o
-                0x0000105c                TempSensor__Initialize
- .text.TempSensor__ConversionHandler
-                0x0000106a       0x1e System/TempSensor.o
-                0x0000106a                TempSensor__ConversionHandler
- .text.TempSensor__GetCelsius
-                0x00001088       0x1c System/TempSensor.o
-                0x00001088                TempSensor__GetCelsius
+                0x00000f48       0x4c System/Sounds.o
+                0x00000f48                Sounds__Background
  .text.libgcc.div
-                0x000010a4       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
-                0x000010a4                _div
-                0x000010a4                __divmodhi4
+                0x00000f94       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
+                0x00000f94                _div
+                0x00000f94                __divmodhi4
  .text.libgcc.div
-                0x000010cc       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
-                0x000010cc                __udivmodhi4
-                0x000010f4                . = ALIGN (0x2)
+                0x00000fbc       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+                0x00000fbc                __udivmodhi4
+                0x00000fe4                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000010f4        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x000010f4                _exit
-                0x000010f4                exit
+ .fini9         0x00000fe4        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00000fe4                _exit
+                0x00000fe4                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -597,11 +600,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000010f4        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000fe4        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x000010f8                _etext = .
+                0x00000fe8                _etext = .
 
-.data           0x00800100       0x6a load address 0x000010f8
+.data           0x00800100       0x52 load address 0x00000fe8
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -614,110 +617,105 @@ END GROUP
  .data.LED_GPIO
                 0x0080010e        0x8 Hal/Hal.o
                 0x0080010e                LED_GPIO
- .data.MAXIMO_DIGITO
+ .data.FIRST_DIGIT
                 0x00800116        0x4 System/Display.o
-                0x00800116                MAXIMO_DIGITO
- .data.MEDIO_DIGITO
+                0x00800116                FIRST_DIGIT
+ .data.GROUD_DIGIT
                 0x0080011a        0x4 System/Display.o
-                0x0080011a                MEDIO_DIGITO
- .data.MINIMO_DIGITO
-                0x0080011e        0x4 System/Display.o
-                0x0080011e                MINIMO_DIGITO
- .data.ZERADO_DIGITO
-                0x00800122        0x4 System/Display.o
-                0x00800122                ZERADO_DIGITO
+                0x0080011a                GROUD_DIGIT
  *(.gnu.linkonce.d*)
  *(.rodata)
  *(.rodata*)
- .rodata.TEMP_CONTROL_PARAMETERS
-                0x00800126       0x10 Appl/OvenTempControl.o
-                0x00800126                TEMP_CONTROL_PARAMETERS
  .rodata.ADC_BIT_SET_MASK
-                0x00800136        0x6 Driver/Adc.o
-                0x00800136                ADC_BIT_SET_MASK
+                0x0080011e        0x6 Driver/Adc.o
+                0x0080011e                ADC_BIT_SET_MASK
  .rodata.Adc_Enable_Table
-                0x0080013c        0x6 Driver/Adc.o
-                0x0080013c                Adc_Enable_Table
+                0x00800124        0x6 Driver/Adc.o
+                0x00800124                Adc_Enable_Table
  .rodata.GPIO_PIN_CLR_MASK
-                0x00800142        0x8 Driver/Gpio.o
-                0x00800142                GPIO_PIN_CLR_MASK
+                0x0080012a        0x8 Driver/Gpio.o
+                0x0080012a                GPIO_PIN_CLR_MASK
  .rodata.GPIO_PIN_SET_MASK
-                0x0080014a        0x8 Driver/Gpio.o
-                0x0080014a                GPIO_PIN_SET_MASK
+                0x00800132        0x8 Driver/Gpio.o
+                0x00800132                GPIO_PIN_SET_MASK
  .rodata.AD_Channel_Table
-                0x00800152        0x6 Hal/Hal.o
-                0x00800152                AD_Channel_Table
+                0x0080013a        0x6 Hal/Hal.o
+                0x0080013a                AD_Channel_Table
  .rodata.AD_Enable_Table
-                0x00800158        0x6 Hal/Hal.o
-                0x00800158                AD_Enable_Table
+                0x00800140        0x6 Hal/Hal.o
+                0x00800140                AD_Enable_Table
  .rodata.Keys_Enable_Table
-                0x0080015e        0x4 Hal/Hal.o
-                0x0080015e                Keys_Enable_Table
+                0x00800146        0x4 Hal/Hal.o
+                0x00800146                Keys_Enable_Table
  .rodata.Leds_Enable_Table
-                0x00800162        0x4 Hal/Hal.o
-                0x00800162                Leds_Enable_Table
+                0x0080014a        0x4 Hal/Hal.o
+                0x0080014a                Leds_Enable_Table
  .rodata.SEGMENT_SELECT
-                0x00800166        0x4 Hal/SevenSeg.o
-                0x00800166                SEGMENT_SELECT
+                0x0080014e        0x4 Hal/SevenSeg.o
+                0x0080014e                SEGMENT_SELECT
  *(.gnu.linkonce.r*)
-                0x0080016a                . = ALIGN (0x2)
-                0x0080016a                _edata = .
-                0x0080016a                PROVIDE (__data_end, .)
+                0x00800152                . = ALIGN (0x2)
+                0x00800152                _edata = .
+                0x00800152                PROVIDE (__data_end, .)
 
-.bss            0x0080016a       0x7f
-                0x0080016a                PROVIDE (__bss_start, .)
+.bss            0x00800152       0x84
+                0x00800152                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
- .bss.flag_seg  0x0080016a        0x1 Driver/Timer.o
-                0x0080016a                flag_seg
+ .bss.flag_seg  0x00800152        0x1 Driver/Timer.o
+                0x00800152                flag_seg
  *(COMMON)
- COMMON         0x0080016b        0x4 Appl/Appl.o
-                0x0080016b                User_Action
-                0x0080016c                Timer_Counter
-                0x0080016d                Trigger
-                0x0080016e                Toggle
- COMMON         0x0080016f        0x1 Appl/main.o
-                0x0080016f                Slot
- COMMON         0x00800170        0x2 Appl/OvenTempControl.o
-                0x00800170                Current_Level
-                0x00800171                Oven_TempControl_State
- COMMON         0x00800172        0xf Driver/Adc.o
-                0x00800172                ADC_Buffer
-                0x0080017e                Adc_Step
-                0x0080017f                Sampling_Time
-                0x00800180                Adc_Channel
- COMMON         0x00800181       0x2d Driver/Timer.o
-                0x00800181                Hms_1sec_Counter
-                0x00800183                Ms_Timers
-                0x00800192                Hms_Timers
- COMMON         0x008001ae       0x31 Hal/Hal.o
-                0x008001ae                AD_Channel
-                0x008001af                Hal_Leds_Buffer
-                0x008001b3                AD_Sample
-                0x008001bf                Hal_Analog_Inputs
-                0x008001cb                AD_Mux_State
-                0x008001cc                AD_Counter
-                0x008001d2                Hal_Keys_Buffer
-                0x008001d3                AD_Accumulator
- COMMON         0x008001df        0x2 System/Display.o
-                0x008001df                Display_Keys_Map
-                0x008001e0                Oven_Display_State
- COMMON         0x008001e1        0x4 System/Sounds.o
-                0x008001e1                PlaySound
-                0x008001e2                End_Cycle_Sound_Step
-                0x008001e3                PowerON_Sound_Step
-                0x008001e4                Key_Press_Sound_Step
- COMMON         0x008001e5        0x4 System/TempSensor.o
-                0x008001e5                Temperature
-                0x008001e9                PROVIDE (__bss_end, .)
-                0x000010f8                __data_load_start = LOADADDR (.data)
-                0x00001162                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x00800153        0x5 Appl/Appl.o
+                0x00800153                Floor_position
+                0x00800154                User_Action
+                0x00800155                Timer_Counter
+                0x00800156                Trigger
+                0x00800157                Toggle
+ COMMON         0x00800158        0x1 Appl/main.o
+                0x00800158                Slot
+ COMMON         0x00800159        0x5 Appl/OvenPositionControl.o
+                0x00800159                Door_state
+                0x0080015a                Oven_PositionControl_State
+                0x0080015b                Oven_PositionControl_Solicitation
+                0x0080015c                current_position
+ COMMON         0x0080015e        0xf Driver/Adc.o
+                0x0080015e                ADC_Buffer
+                0x0080016a                Adc_Step
+                0x0080016b                Sampling_Time
+                0x0080016c                Adc_Channel
+ COMMON         0x0080016d       0x2d Driver/Timer.o
+                0x0080016d                Hms_1sec_Counter
+                0x0080016f                Ms_Timers
+                0x0080017e                Hms_Timers
+ COMMON         0x0080019a       0x31 Hal/Hal.o
+                0x0080019a                AD_Channel
+                0x0080019b                Hal_Leds_Buffer
+                0x0080019f                AD_Sample
+                0x008001ab                Hal_Analog_Inputs
+                0x008001b7                AD_Mux_State
+                0x008001b8                AD_Counter
+                0x008001be                Hal_Keys_Buffer
+                0x008001bf                AD_Accumulator
+ COMMON         0x008001cb        0x3 System/Display.o
+                0x008001cb                Segment_Floor_State
+                0x008001cc                Display_Keys_Map
+                0x008001cd                Oven_Display_State
+ COMMON         0x008001ce        0x4 System/PositionSensor.o
+                0x008001ce                Position
+ COMMON         0x008001d2        0x4 System/Sounds.o
+                0x008001d2                PlaySound
+                0x008001d3                End_Cycle_Sound_Step
+                0x008001d4                PowerON_Sound_Step
+                0x008001d5                Key_Press_Sound_Step
+                0x008001d6                PROVIDE (__bss_end, .)
+                0x00000fe8                __data_load_start = LOADADDR (.data)
+                0x0000103a                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x008001e9        0x0
+.noinit         0x008001d6        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x008001e9                _end = .
+                0x008001d6                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -762,7 +760,7 @@ END GROUP
  .comment       0x00000000       0x30 Appl/Appl.o
                                  0x31 (size before relaxing)
  .comment       0x00000030       0x31 Appl/main.o
- .comment       0x00000030       0x31 Appl/OvenTempControl.o
+ .comment       0x00000030       0x31 Appl/OvenPositionControl.o
  .comment       0x00000030       0x31 Driver/Adc.o
  .comment       0x00000030       0x31 Driver/Gpio.o
  .comment       0x00000030       0x31 Driver/Pwm.o
@@ -770,8 +768,8 @@ END GROUP
  .comment       0x00000030       0x31 Hal/Hal.o
  .comment       0x00000030       0x31 Hal/SevenSeg.o
  .comment       0x00000030       0x31 System/Display.o
+ .comment       0x00000030       0x31 System/PositionSensor.o
  .comment       0x00000030       0x31 System/Sounds.o
- .comment       0x00000030       0x31 System/TempSensor.o
 
 .note.gnu.avr.deviceinfo
                 0x00000000       0x40
@@ -793,139 +791,139 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x2f8
+.debug_aranges  0x00000000      0x2f0
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x28 Appl/Appl.o
  .debug_aranges
                 0x00000028       0x20 Appl/main.o
  .debug_aranges
-                0x00000048       0x38 Appl/OvenTempControl.o
+                0x00000048       0x30 Appl/OvenPositionControl.o
  .debug_aranges
-                0x00000080       0x38 Driver/Adc.o
+                0x00000078       0x38 Driver/Adc.o
  .debug_aranges
-                0x000000b8       0x30 Driver/Gpio.o
+                0x000000b0       0x30 Driver/Gpio.o
  .debug_aranges
-                0x000000e8       0x30 Driver/Pwm.o
+                0x000000e0       0x30 Driver/Pwm.o
  .debug_aranges
-                0x00000118       0x70 Driver/Timer.o
+                0x00000110       0x70 Driver/Timer.o
  .debug_aranges
-                0x00000188       0x80 Hal/Hal.o
+                0x00000180       0x80 Hal/Hal.o
  .debug_aranges
-                0x00000208       0x20 Hal/SevenSeg.o
+                0x00000200       0x20 Hal/SevenSeg.o
  .debug_aranges
-                0x00000228       0x50 System/Display.o
+                0x00000220       0x50 System/Display.o
  .debug_aranges
-                0x00000278       0x50 System/Sounds.o
+                0x00000270       0x30 System/PositionSensor.o
  .debug_aranges
-                0x000002c8       0x30 System/TempSensor.o
+                0x000002a0       0x50 System/Sounds.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x3892
+.debug_info     0x00000000     0x3682
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x5f4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5/crtatmega328p.o
- .debug_info    0x000005f4      0x49e Appl/Appl.o
- .debug_info    0x00000a92      0x258 Appl/main.o
- .debug_info    0x00000cea      0x26f Appl/OvenTempControl.o
- .debug_info    0x00000f59      0x4e9 Driver/Adc.o
- .debug_info    0x00001442      0x356 Driver/Gpio.o
- .debug_info    0x00001798      0x56d Driver/Pwm.o
- .debug_info    0x00001d05      0x444 Driver/Timer.o
- .debug_info    0x00002149      0x807 Hal/Hal.o
- .debug_info    0x00002950      0x142 Hal/SevenSeg.o
- .debug_info    0x00002a92      0x6d0 System/Display.o
- .debug_info    0x00003162      0x57e System/Sounds.o
- .debug_info    0x000036e0      0x1b2 System/TempSensor.o
+ .debug_info    0x000005f4      0x309 Appl/Appl.o
+ .debug_info    0x000008fd      0x2b8 Appl/main.o
+ .debug_info    0x00000bb5      0x24e Appl/OvenPositionControl.o
+ .debug_info    0x00000e03      0x4e9 Driver/Adc.o
+ .debug_info    0x000012ec      0x356 Driver/Gpio.o
+ .debug_info    0x00001642      0x56d Driver/Pwm.o
+ .debug_info    0x00001baf      0x444 Driver/Timer.o
+ .debug_info    0x00001ff3      0x807 Hal/Hal.o
+ .debug_info    0x000027fa      0x142 Hal/SevenSeg.o
+ .debug_info    0x0000293c      0x613 System/Display.o
+ .debug_info    0x00002f4f      0x1b5 System/PositionSensor.o
+ .debug_info    0x00003104      0x57e System/Sounds.o
 
-.debug_abbrev   0x00000000     0x146c
+.debug_abbrev   0x00000000     0x1447
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x5a2 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5/crtatmega328p.o
  .debug_abbrev  0x000005a2       0xbd Appl/Appl.o
- .debug_abbrev  0x0000065f       0x9c Appl/main.o
- .debug_abbrev  0x000006fb      0x146 Appl/OvenTempControl.o
- .debug_abbrev  0x00000841      0x16f Driver/Adc.o
- .debug_abbrev  0x000009b0      0x164 Driver/Gpio.o
- .debug_abbrev  0x00000b14      0x1a7 Driver/Pwm.o
- .debug_abbrev  0x00000cbb      0x184 Driver/Timer.o
- .debug_abbrev  0x00000e3f      0x1db Hal/Hal.o
- .debug_abbrev  0x0000101a       0xc7 Hal/SevenSeg.o
- .debug_abbrev  0x000010e1      0x14a System/Display.o
- .debug_abbrev  0x0000122b      0x154 System/Sounds.o
- .debug_abbrev  0x0000137f       0xed System/TempSensor.o
+ .debug_abbrev  0x0000065f       0xbf Appl/main.o
+ .debug_abbrev  0x0000071e       0xe4 Appl/OvenPositionControl.o
+ .debug_abbrev  0x00000802      0x16f Driver/Adc.o
+ .debug_abbrev  0x00000971      0x164 Driver/Gpio.o
+ .debug_abbrev  0x00000ad5      0x1a7 Driver/Pwm.o
+ .debug_abbrev  0x00000c7c      0x184 Driver/Timer.o
+ .debug_abbrev  0x00000e00      0x1db Hal/Hal.o
+ .debug_abbrev  0x00000fdb       0xc7 Hal/SevenSeg.o
+ .debug_abbrev  0x000010a2      0x155 System/Display.o
+ .debug_abbrev  0x000011f7       0xfc System/PositionSensor.o
+ .debug_abbrev  0x000012f3      0x154 System/Sounds.o
 
-.debug_line     0x00000000     0x190f
+.debug_line     0x00000000     0x18d4
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x133 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5/crtatmega328p.o
- .debug_line    0x00000133      0x1ce Appl/Appl.o
- .debug_line    0x00000301      0x1b5 Appl/main.o
- .debug_line    0x000004b6      0x132 Appl/OvenTempControl.o
- .debug_line    0x000005e8      0x1f8 Driver/Adc.o
- .debug_line    0x000007e0      0x193 Driver/Gpio.o
- .debug_line    0x00000973      0x21f Driver/Pwm.o
- .debug_line    0x00000b92      0x327 Driver/Timer.o
- .debug_line    0x00000eb9      0x3af Hal/Hal.o
- .debug_line    0x00001268      0x10d Hal/SevenSeg.o
- .debug_line    0x00001375      0x1ea System/Display.o
- .debug_line    0x0000155f      0x2dd System/Sounds.o
- .debug_line    0x0000183c       0xd3 System/TempSensor.o
+ .debug_line    0x00000133      0x154 Appl/Appl.o
+ .debug_line    0x00000287      0x1c9 Appl/main.o
+ .debug_line    0x00000450      0x149 Appl/OvenPositionControl.o
+ .debug_line    0x00000599      0x1f8 Driver/Adc.o
+ .debug_line    0x00000791      0x193 Driver/Gpio.o
+ .debug_line    0x00000924      0x21f Driver/Pwm.o
+ .debug_line    0x00000b43      0x327 Driver/Timer.o
+ .debug_line    0x00000e6a      0x3af Hal/Hal.o
+ .debug_line    0x00001219      0x10d Hal/SevenSeg.o
+ .debug_line    0x00001326      0x1fd System/Display.o
+ .debug_line    0x00001523       0xd4 System/PositionSensor.o
+ .debug_line    0x000015f7      0x2dd System/Sounds.o
 
-.debug_frame    0x00000000      0x578
+.debug_frame    0x00000000      0x548
  *(.debug_frame)
  .debug_frame   0x00000000       0x34 Appl/Appl.o
  .debug_frame   0x00000034       0x24 Appl/main.o
- .debug_frame   0x00000058       0x74 Appl/OvenTempControl.o
- .debug_frame   0x000000cc       0x60 Driver/Adc.o
- .debug_frame   0x0000012c       0x44 Driver/Gpio.o
- .debug_frame   0x00000170       0x50 Driver/Pwm.o
- .debug_frame   0x000001c0       0xd8 Driver/Timer.o
- .debug_frame   0x00000298      0x170 Hal/Hal.o
- .debug_frame   0x00000408       0x24 Hal/SevenSeg.o
- .debug_frame   0x0000042c       0x84 System/Display.o
- .debug_frame   0x000004b0       0x84 System/Sounds.o
- .debug_frame   0x00000534       0x44 System/TempSensor.o
+ .debug_frame   0x00000058       0x44 Appl/OvenPositionControl.o
+ .debug_frame   0x0000009c       0x60 Driver/Adc.o
+ .debug_frame   0x000000fc       0x44 Driver/Gpio.o
+ .debug_frame   0x00000140       0x50 Driver/Pwm.o
+ .debug_frame   0x00000190       0xd8 Driver/Timer.o
+ .debug_frame   0x00000268      0x170 Hal/Hal.o
+ .debug_frame   0x000003d8       0x24 Hal/SevenSeg.o
+ .debug_frame   0x000003fc       0x84 System/Display.o
+ .debug_frame   0x00000480       0x44 System/PositionSensor.o
+ .debug_frame   0x000004c4       0x84 System/Sounds.o
 
-.debug_str      0x00000000     0x16e3
+.debug_str      0x00000000     0x170f
  *(.debug_str)
  .debug_str     0x00000000      0x208 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5/crtatmega328p.o
- .debug_str     0x00000208      0x400 Appl/Appl.o
-                                0x43d (size before relaxing)
- .debug_str     0x00000608      0x19b Appl/main.o
-                                0x2f0 (size before relaxing)
- .debug_str     0x000007a3      0x1a7 Appl/OvenTempControl.o
-                                0x327 (size before relaxing)
- .debug_str     0x0000094a      0x2d4 Driver/Adc.o
+ .debug_str     0x00000208      0x2e9 Appl/Appl.o
+                                0x31d (size before relaxing)
+ .debug_str     0x000004f1      0x1d3 Appl/main.o
+                                0x328 (size before relaxing)
+ .debug_str     0x000006c4      0x181 Appl/OvenPositionControl.o
+                                0x37a (size before relaxing)
+ .debug_str     0x00000845      0x2dd Driver/Adc.o
                                 0x449 (size before relaxing)
- .debug_str     0x00000c1e      0x13a Driver/Gpio.o
+ .debug_str     0x00000b22      0x13a Driver/Gpio.o
                                 0x2c5 (size before relaxing)
- .debug_str     0x00000d58      0x1ca Driver/Pwm.o
+ .debug_str     0x00000c5c      0x1ca Driver/Pwm.o
                                 0x3c6 (size before relaxing)
- .debug_str     0x00000f22      0x184 Driver/Timer.o
+ .debug_str     0x00000e26      0x278 Driver/Timer.o
                                 0x411 (size before relaxing)
- .debug_str     0x000010a6      0x2a7 Hal/Hal.o
+ .debug_str     0x0000109e      0x2d7 Hal/Hal.o
                                 0x668 (size before relaxing)
- .debug_str     0x0000134d       0x33 Hal/SevenSeg.o
+ .debug_str     0x00001375       0x33 Hal/SevenSeg.o
                                 0x1aa (size before relaxing)
- .debug_str     0x00001380       0xdf System/Display.o
-                                0x35c (size before relaxing)
- .debug_str     0x0000145f      0x21e System/Sounds.o
+ .debug_str     0x000013a8       0xd6 System/Display.o
+                                0x415 (size before relaxing)
+ .debug_str     0x0000147e       0x73 System/PositionSensor.o
+                                0x27b (size before relaxing)
+ .debug_str     0x000014f1      0x21e System/Sounds.o
                                 0x4ee (size before relaxing)
- .debug_str     0x0000167d       0x66 System/TempSensor.o
-                                0x257 (size before relaxing)
 
-.debug_loc      0x00000000     0x1073
+.debug_loc      0x00000000      0xe7e
  *(.debug_loc)
- .debug_loc     0x00000000       0xbb Appl/OvenTempControl.o
- .debug_loc     0x000000bb      0x114 Driver/Adc.o
- .debug_loc     0x000001cf      0x130 Driver/Gpio.o
- .debug_loc     0x000002ff      0x26d Driver/Pwm.o
- .debug_loc     0x0000056c      0x1ff Driver/Timer.o
- .debug_loc     0x0000076b      0x42f Hal/Hal.o
- .debug_loc     0x00000b9a       0x97 Hal/SevenSeg.o
- .debug_loc     0x00000c31      0x260 System/Display.o
- .debug_loc     0x00000e91      0x119 System/Sounds.o
- .debug_loc     0x00000faa       0xc9 System/TempSensor.o
+ .debug_loc     0x00000000       0x30 Appl/OvenPositionControl.o
+ .debug_loc     0x00000030      0x114 Driver/Adc.o
+ .debug_loc     0x00000144      0x130 Driver/Gpio.o
+ .debug_loc     0x00000274      0x26d Driver/Pwm.o
+ .debug_loc     0x000004e1      0x1ff Driver/Timer.o
+ .debug_loc     0x000006e0      0x42f Hal/Hal.o
+ .debug_loc     0x00000b0f       0x97 Hal/SevenSeg.o
+ .debug_loc     0x00000ba6      0x139 System/Display.o
+ .debug_loc     0x00000cdf       0x86 System/PositionSensor.o
+ .debug_loc     0x00000d65      0x119 System/Sounds.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -945,20 +943,20 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x238
+.debug_ranges   0x00000000      0x230
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x18 Appl/Appl.o
  .debug_ranges  0x00000018       0x10 Appl/main.o
- .debug_ranges  0x00000028       0x28 Appl/OvenTempControl.o
- .debug_ranges  0x00000050       0x28 Driver/Adc.o
- .debug_ranges  0x00000078       0x20 Driver/Gpio.o
- .debug_ranges  0x00000098       0x20 Driver/Pwm.o
- .debug_ranges  0x000000b8       0x60 Driver/Timer.o
- .debug_ranges  0x00000118       0x70 Hal/Hal.o
- .debug_ranges  0x00000188       0x10 Hal/SevenSeg.o
- .debug_ranges  0x00000198       0x40 System/Display.o
- .debug_ranges  0x000001d8       0x40 System/Sounds.o
- .debug_ranges  0x00000218       0x20 System/TempSensor.o
+ .debug_ranges  0x00000028       0x20 Appl/OvenPositionControl.o
+ .debug_ranges  0x00000048       0x28 Driver/Adc.o
+ .debug_ranges  0x00000070       0x20 Driver/Gpio.o
+ .debug_ranges  0x00000090       0x20 Driver/Pwm.o
+ .debug_ranges  0x000000b0       0x60 Driver/Timer.o
+ .debug_ranges  0x00000110       0x70 Hal/Hal.o
+ .debug_ranges  0x00000180       0x10 Hal/SevenSeg.o
+ .debug_ranges  0x00000190       0x40 System/Display.o
+ .debug_ranges  0x000001d0       0x20 System/PositionSensor.o
+ .debug_ranges  0x000001f0       0x40 System/Sounds.o
 
 .debug_macro
  *(.debug_macro)

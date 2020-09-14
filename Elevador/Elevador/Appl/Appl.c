@@ -15,13 +15,14 @@
 #include <Z:\Elevador\Elevador\Elevador\Header\Adc.h>
 #include <Z:\Elevador\Elevador\Elevador\Header\Timer.h>
 #include <Z:\Elevador\Elevador\Elevador\Header\Hal.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\OvenTempControl.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\OvenPositionControl.h>
 
 #include <Z:\Elevador\Elevador\Elevador\Header\Pwm.h>
 #include <Z:\Elevador\Elevador\Elevador\Header\Sounds.h>
 
 //-------------------------------------- PUBLIC (Variables) -----------------------------------------------------------
-KEY_EVENT_TYPE User_Action;
+KEY_SOLICITATION_TYPE User_Action;
+FLOOR_STATE Floor_position; 
 
 //-------------------------------------- Defines, Enumerations ----------------------------------------------------------------
 #define EXP_ADC                ENABLED
@@ -81,15 +82,32 @@ void Appl__Handler(void)
 		switch(User_Action)
 		{
 			case KEY_GROUND_FLOOR:
-			
+				Hal__SetBuzzerFreq(4000);
+				Sounds__PlaySounds(SOUND_KEY_PRESS);
+				Floor_position = GROUND_STATE;
+				OvenPosition__SetSolicitation(GROUND);
 			break;
-			
+		
 			case KEY_FIRST_FLOOR:
-			
+				Hal__SetBuzzerFreq(4000);
+				Sounds__PlaySounds(SOUND_KEY_PRESS);
+				Floor_position = FIRST_STATE;
+				OvenPosition__SetSolicitation(FIRST);
 			break;
 			
 			case KEY_NEXT_FLOOR:
-			
+				Hal__SetBuzzerFreq(4000);
+				Sounds__PlaySounds(SOUND_KEY_PRESS);
+				if (Floor_position == GROUND_STATE)
+				{
+					Display__SetState(DOOR_CLOSE);
+					OvenPosition__SetSolicitation(FIRST);
+				}
+				if (Floor_position == FIRST_STATE)
+				{
+					Display__SetState(DOOR_CLOSE);
+					OvenPosition__SetSolicitation(GROUND);
+				}
 			break;
 			
 			default:

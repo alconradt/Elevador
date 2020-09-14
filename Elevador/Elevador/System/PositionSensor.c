@@ -9,6 +9,7 @@
 #include <Z:\Elevador\Elevador\Elevador\Header\C_Types.h>
 #include <Z:\Elevador\Elevador\Elevador\Header\PositionSensor.h>
 #include <Z:\Elevador\Elevador\Elevador\Header\Hal.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\Sounds.h>
 
 //-------------------------------------- PUBLIC (Variables) -----------------------------------------------------------
 
@@ -35,7 +36,7 @@ void PositionSensor__Initialize(void)
 //---------------------------------------------------------------------------------------------------------------------
 void PositionSensor__ConversionHandler(void)
 {
-	float ad_value;      // variavel para calculos
+	unsigned short int ad_value;      // variavel para calculos
 	POSITION_SENSOR_TYPE sensor_id;   // identificador do sensor
 	
 	for (sensor_id = 0; sensor_id < NUM_OF_POSITION_SENSOR; sensor_id++)
@@ -43,8 +44,6 @@ void PositionSensor__ConversionHandler(void)
 		if(PositionSensor_Enable_Table[sensor_id] == ENABLED)
 		{
 			ad_value = Hal__GetAnalogInput(PositionSensorTable[sensor_id]); //ad_value em valor digital
-			ad_value = (5*ad_value)/1024; //ad_value em volts 
-			ad_value = (2.93*ad_value)/4.88; //ad_value em milimetros
 			Position[sensor_id] = ad_value;
 		}
 		

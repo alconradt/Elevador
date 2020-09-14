@@ -15,8 +15,8 @@
 #include <Z:\Elevador\Elevador\Elevador\Header\Adc.h>
 #include <Z:\Elevador\Elevador\Elevador\Header\Timer.h>
 #include <Z:\Elevador\Elevador\Elevador\Header\Hal.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\TempSensor.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\OvenTempControl.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\PositionSensor.h>
+#include <Z:\Elevador\Elevador\Elevador\Header\OvenPositionControl.h>
 #include <Z:\Elevador\Elevador\Elevador\Header\Pwm.h>
 #include <Z:\Elevador\Elevador\Elevador\Header\Sounds.h>
 //-------------------------------------- Defines ----------------------------------------------------------------
@@ -47,8 +47,8 @@
 	Display__Initialize();\
 	Timer__Initialize();\
 	Sounds__Initialize();\
-	TempSensor__Initialize();\
-	OvenTempControl__Initialize();\
+	PositionSensor__Initialize();\
+	OvenPositionControl__Initialize();\
 	Appl__Initialize();\
 	}
 
@@ -79,16 +79,18 @@
 #define SLOT_3_TASKS()\
 {\
 	ADC__Handler();\
-	TempSensor__ConversionHandler();\
+	PositionSensor__ConversionHandler();\
 }
 	
 #define SLOT_4_TASKS()\
 {\
-	OvenTempControl__Handler();\
+	OvenPositionControl__Handler();\
 }
 	
 #define SLOT_5_TASKS()\
 {\	
+	UpdateDisplaySevenSeg();\
+	UpdateDisplayLeds();\
 }
 
 

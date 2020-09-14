@@ -23,8 +23,11 @@ Appl/Appl.d Appl/Appl.o: ../Appl/Appl.c \
  Z:\Elevador\Elevador\Elevador\Header\Timer_prm.h \
  Z:\Elevador\Elevador\Elevador\Header\Hal.h \
  Z:\Elevador\Elevador\Elevador\Header\Hal_prm.h \
- Z:\Elevador\Elevador\Elevador\Header\OvenTempControl.h \
- Z:\Elevador\Elevador\Elevador\Header\OvenTempControl_prm.h \
+ Z:\Elevador\Elevador\Elevador\Header\OvenPositionControl.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
+ Z:\Elevador\Elevador\Elevador\Header\OvenPositionControl_prm.h \
  Z:\Elevador\Elevador\Elevador\Header\Pwm.h \
  Z:\Elevador\Elevador\Elevador\Header\Sounds.h \
  Z:\Elevador\Elevador\Elevador\Header\Sound_prm.h
@@ -77,9 +80,15 @@ Z:\Elevador\Elevador\Elevador\Header\Hal.h:
 
 Z:\Elevador\Elevador\Elevador\Header\Hal_prm.h:
 
-Z:\Elevador\Elevador\Elevador\Header\OvenTempControl.h:
+Z:\Elevador\Elevador\Elevador\Header\OvenPositionControl.h:
 
-Z:\Elevador\Elevador\Elevador\Header\OvenTempControl_prm.h:
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h:
+
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h:
+
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:
+
+Z:\Elevador\Elevador\Elevador\Header\OvenPositionControl_prm.h:
 
 Z:\Elevador\Elevador\Elevador\Header\Pwm.h:
 

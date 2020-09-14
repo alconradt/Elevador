@@ -44,7 +44,7 @@ SUBDIRS :=  \
 C_SRCS +=  \
 ../Appl/Appl.c \
 ../Appl/main.c \
-../Appl/OvenTempControl.c \
+../Appl/OvenPositionControl.c \
 ../Driver/Adc.c \
 ../Driver/Gpio.c \
 ../Driver/Pwm.c \
@@ -52,8 +52,8 @@ C_SRCS +=  \
 ../Hal/Hal.c \
 ../Hal/SevenSeg.c \
 ../System/Display.c \
-../System/Sounds.c \
-../System/TempSensor.c
+../System/PositionSensor.c \
+../System/Sounds.c
 
 
 PREPROCESSING_SRCS += 
@@ -65,7 +65,7 @@ ASM_SRCS +=
 OBJS +=  \
 Appl/Appl.o \
 Appl/main.o \
-Appl/OvenTempControl.o \
+Appl/OvenPositionControl.o \
 Driver/Adc.o \
 Driver/Gpio.o \
 Driver/Pwm.o \
@@ -73,13 +73,13 @@ Driver/Timer.o \
 Hal/Hal.o \
 Hal/SevenSeg.o \
 System/Display.o \
-System/Sounds.o \
-System/TempSensor.o
+System/PositionSensor.o \
+System/Sounds.o
 
 OBJS_AS_ARGS +=  \
 Appl/Appl.o \
 Appl/main.o \
-Appl/OvenTempControl.o \
+Appl/OvenPositionControl.o \
 Driver/Adc.o \
 Driver/Gpio.o \
 Driver/Pwm.o \
@@ -87,13 +87,13 @@ Driver/Timer.o \
 Hal/Hal.o \
 Hal/SevenSeg.o \
 System/Display.o \
-System/Sounds.o \
-System/TempSensor.o
+System/PositionSensor.o \
+System/Sounds.o
 
 C_DEPS +=  \
 Appl/Appl.d \
 Appl/main.d \
-Appl/OvenTempControl.d \
+Appl/OvenPositionControl.d \
 Driver/Adc.d \
 Driver/Gpio.d \
 Driver/Pwm.d \
@@ -101,13 +101,13 @@ Driver/Timer.d \
 Hal/Hal.d \
 Hal/SevenSeg.d \
 System/Display.d \
-System/Sounds.d \
-System/TempSensor.d
+System/PositionSensor.d \
+System/Sounds.d
 
 C_DEPS_AS_ARGS +=  \
 Appl/Appl.d \
 Appl/main.d \
-Appl/OvenTempControl.d \
+Appl/OvenPositionControl.d \
 Driver/Adc.d \
 Driver/Gpio.d \
 Driver/Pwm.d \
@@ -115,8 +115,8 @@ Driver/Timer.d \
 Hal/Hal.d \
 Hal/SevenSeg.d \
 System/Display.d \
-System/Sounds.d \
-System/TempSensor.d
+System/PositionSensor.d \
+System/Sounds.d
 
 OUTPUT_FILE_PATH +=Elevador.elf
 
@@ -146,7 +146,7 @@ Appl/main.o: ../Appl/main.c
 	@echo Finished building: $<
 	
 
-Appl/OvenTempControl.o: ../Appl/OvenTempControl.c
+Appl/OvenPositionControl.o: ../Appl/OvenPositionControl.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega328p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
@@ -202,14 +202,14 @@ System/Display.o: ../System/Display.c
 	@echo Finished building: $<
 	
 
-System/Sounds.o: ../System/Sounds.c
+System/PositionSensor.o: ../System/PositionSensor.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega328p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
-System/TempSensor.o: ../System/TempSensor.c
+System/Sounds.o: ../System/Sounds.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega328p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

@@ -1,10 +1,11 @@
-System/Display.d System/Display.o: ../System/Display.c \
+Appl/OvenPositionControl.d Appl/OvenPositionControl.o: \
+ ../Appl/OvenPositionControl.c \
  Z:\Elevador\Elevador\Elevador\Header\C_Types.h \
  Z:\Elevador\Elevador\Elevador\Header\Display.h \
  Z:\Elevador\Elevador\Elevador\Header\Display_prm.h \
  Z:\Elevador\Elevador\Elevador\Header\C_types.h \
- Z:\Elevador\Elevador\Elevador\Header\Hal.h \
- Z:\Elevador\Elevador\Elevador\Header\Hal_prm.h \
+ Z:\Elevador\Elevador\Elevador\Header\Sounds.h \
+ Z:\Elevador\Elevador\Elevador\Header\Sound_prm.h \
  Z:\Elevador\Elevador\Elevador\Header\PositionSensor.h \
  Z:\Elevador\Elevador\Elevador\Header\PositionSensor_prm.h \
  Z:\Elevador\Elevador\Elevador\Header\OvenPositionControl.h \
@@ -24,9 +25,9 @@ Z:\Elevador\Elevador\Elevador\Header\Display_prm.h:
 
 Z:\Elevador\Elevador\Elevador\Header\C_types.h:
 
-Z:\Elevador\Elevador\Elevador\Header\Hal.h:
+Z:\Elevador\Elevador\Elevador\Header\Sounds.h:
 
-Z:\Elevador\Elevador\Elevador\Header\Hal_prm.h:
+Z:\Elevador\Elevador\Elevador\Header\Sound_prm.h:
 
 Z:\Elevador\Elevador\Elevador\Header\PositionSensor.h:
 

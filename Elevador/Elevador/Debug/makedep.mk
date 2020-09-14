@@ -6,7 +6,7 @@ Appl\Appl.c
 
 Appl\main.c
 
-Appl\OvenTempControl.c
+Appl\OvenPositionControl.c
 
 Driver\Adc.c
 
@@ -22,7 +22,7 @@ Hal\SevenSeg.c
 
 System\Display.c
 
-System\Sounds.c
+System\PositionSensor.c
 
-System\TempSensor.c
+System\Sounds.c
 

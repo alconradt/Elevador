@@ -19,7 +19,7 @@
 const unsigned char Leds_Enable_Table[NUM_OF_LEDS]= {USE_LED_0, USE_LED_1, USE_LED_2, USE_LED_3};
 const unsigned char Keys_Enable_Table[NUM_OF_KEYS]= {USE_KEY_0, USE_KEY_1, USE_KEY_2, USE_KEY_3};
 
-const unsigned char AD_Enable_Table[NUM_OF_ANALOG_INPUT]= {DISABLED, DISABLED, DISABLED, DISABLED, DISABLED, ENABLED};
+const unsigned char AD_Enable_Table[NUM_OF_ANALOG_INPUT]= {ENABLED, DISABLED, DISABLED, DISABLED, DISABLED, DISABLED};
 //const unsigned char AD_Enable_Table[NUM_OF_ANALOG_INPUT]= {USE_POT_IN, USE_POT_OUT};// {USE_POT_IN, USE_POT_OUT};
 const unsigned char AD_Channel_Table[NUM_OF_ANALOG_INPUT] = {AD_CH0, AD_CH1, AD_CH2, AD_CH3, AD_CH4, AD_CH5};
 //-------------------------------------- Defines, Enumerations ----------------------------------------------------------------
@@ -125,7 +125,7 @@ void Hal__Initialize(void)
 	// Analog Inputs Configuration - modo de conversão e resolução e inicializa os buffers de várias leitura do ADC
 	ADC__ConfigModes(MODE_10BITS,AD_SINGLE_CONVERSION);
 	AD_Mux_State = MUX_INIT;
-	AD_Channel = POT_EXT;  // eqivalente ao canal AD5 do arduino
+	AD_Channel = POT_INT;  // eqivalente ao canal AD0 do arduino
 
 	for(analog_index = 0; analog_index < NUM_OF_ANALOG_INPUT; analog_index++)
 	{
