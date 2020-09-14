@@ -347,7 +347,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x1000
+.text           0x00000000     0x1008
  *(.vectors)
  .vectors       0x00000000       0x68 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5/crtatmega328p.o
                 0x00000000                __vector_default
@@ -434,172 +434,172 @@ END GROUP
                 0x000000a6                . = ALIGN (0x2)
  *(.text.*)
  .text.Appl__Initialize
-                0x000000a6       0x1c Appl/Appl.o
+                0x000000a6        0xe Appl/Appl.o
                 0x000000a6                Appl__Initialize
  .text.Appl__Handler
-                0x000000c2       0x82 Appl/Appl.o
-                0x000000c2                Appl__Handler
- .text.main     0x00000144       0xbc Appl/main.o
-                0x00000144                main
+                0x000000b4       0x82 Appl/Appl.o
+                0x000000b4                Appl__Handler
+ .text.main     0x00000136       0xbc Appl/main.o
+                0x00000136                main
  .text.OvenPositionControl__Initialize
-                0x00000200        0x6 Appl/OvenPositionControl.o
-                0x00000200                OvenPositionControl__Initialize
+                0x000001f2        0x6 Appl/OvenPositionControl.o
+                0x000001f2                OvenPositionControl__Initialize
  .text.OvenPosition__SetSolicitation
-                0x00000206       0x4a Appl/OvenPositionControl.o
-                0x00000206                OvenPosition__SetSolicitation
+                0x000001f8       0x4a Appl/OvenPositionControl.o
+                0x000001f8                OvenPosition__SetSolicitation
  .text.OvenPositionControl__Handler
-                0x00000250       0x44 Appl/OvenPositionControl.o
-                0x00000250                OvenPositionControl__Handler
+                0x00000242       0x44 Appl/OvenPositionControl.o
+                0x00000242                OvenPositionControl__Handler
  .text.ADC__Initialize
-                0x00000294       0x52 Driver/Adc.o
-                0x00000294                ADC__Initialize
+                0x00000286       0x52 Driver/Adc.o
+                0x00000286                ADC__Initialize
  .text.ADC__Handler
-                0x000002e6       0xd8 Driver/Adc.o
-                0x000002e6                ADC__Handler
+                0x000002d8       0xd8 Driver/Adc.o
+                0x000002d8                ADC__Handler
  .text.ADC__ConfigModes
-                0x000003be       0x52 Driver/Adc.o
-                0x000003be                ADC__ConfigModes
+                0x000003b0       0x52 Driver/Adc.o
+                0x000003b0                ADC__ConfigModes
  .text.ADC__GetValue
-                0x00000410       0x1c Driver/Adc.o
-                0x00000410                ADC__GetValue
+                0x00000402       0x1c Driver/Adc.o
+                0x00000402                ADC__GetValue
  .text.Gpio__PinConfig
-                0x0000042c       0x6c Driver/Gpio.o
-                0x0000042c                Gpio__PinConfig
+                0x0000041e       0x6c Driver/Gpio.o
+                0x0000041e                Gpio__PinConfig
  .text.Gpio__PinWrite
-                0x00000498       0x54 Driver/Gpio.o
-                0x00000498                Gpio__PinWrite
+                0x0000048a       0x54 Driver/Gpio.o
+                0x0000048a                Gpio__PinWrite
  .text.Gpio__PinRead
-                0x000004ec       0x28 Driver/Gpio.o
-                0x000004ec                Gpio__PinRead
+                0x000004de       0x28 Driver/Gpio.o
+                0x000004de                Gpio__PinRead
  .text.Pwm__SetTCFrequency
-                0x00000514      0x148 Driver/Pwm.o
-                0x00000514                Pwm__SetTCFrequency
+                0x00000506      0x148 Driver/Pwm.o
+                0x00000506                Pwm__SetTCFrequency
  .text.Pwm__Initialize
-                0x0000065c       0x20 Driver/Pwm.o
-                0x0000065c                Pwm__Initialize
+                0x0000064e       0x20 Driver/Pwm.o
+                0x0000064e                Pwm__Initialize
  .text.Pwm__SetDutyCycle
-                0x0000067c       0xa2 Driver/Pwm.o
-                0x0000067c                Pwm__SetDutyCycle
+                0x0000066e       0xa2 Driver/Pwm.o
+                0x0000066e                Pwm__SetDutyCycle
  .text.Timer__Initialize
-                0x0000071e       0x30 Driver/Timer.o
-                0x0000071e                Timer__Initialize
+                0x00000710       0x30 Driver/Timer.o
+                0x00000710                Timer__Initialize
  .text.Timer__HMSHandler
-                0x0000074e       0x5a Driver/Timer.o
-                0x0000074e                Timer__HMSHandler
+                0x00000740       0x5a Driver/Timer.o
+                0x00000740                Timer__HMSHandler
  .text.Timer__HMSSet
-                0x000007a8       0x36 Driver/Timer.o
-                0x000007a8                Timer__HMSSet
+                0x0000079a       0x36 Driver/Timer.o
+                0x0000079a                Timer__HMSSet
  .text.Timer__HMSGetStatus
-                0x000007de       0x12 Driver/Timer.o
-                0x000007de                Timer__HMSGetStatus
+                0x000007d0       0x12 Driver/Timer.o
+                0x000007d0                Timer__HMSGetStatus
  .text.__vector_13
-                0x000007f0       0x36 Driver/Timer.o
-                0x000007f0                __vector_13
+                0x000007e2       0x36 Driver/Timer.o
+                0x000007e2                __vector_13
  .text.Hal__SetLed
-                0x00000826       0x1c Hal/Hal.o
-                0x00000826                Hal__SetLed
+                0x00000818       0x1c Hal/Hal.o
+                0x00000818                Hal__SetLed
  .text.Hal__SetAllLeds
-                0x00000842       0x1e Hal/Hal.o
-                0x00000842                Hal__SetAllLeds
+                0x00000834       0x1e Hal/Hal.o
+                0x00000834                Hal__SetAllLeds
  .text.Hal__Initialize
-                0x00000860       0x98 Hal/Hal.o
-                0x00000860                Hal__Initialize
+                0x00000852       0x98 Hal/Hal.o
+                0x00000852                Hal__Initialize
  .text.Hal__ReadKey
-                0x000008f8       0x26 Hal/Hal.o
-                0x000008f8                Hal__ReadKey
+                0x000008ea       0x26 Hal/Hal.o
+                0x000008ea                Hal__ReadKey
  .text.Hal__WriteValtoSegment
-                0x0000091e        0x6 Hal/Hal.o
-                0x0000091e                Hal__WriteValtoSegment
+                0x00000910        0x6 Hal/Hal.o
+                0x00000910                Hal__WriteValtoSegment
  .text.Hal__GetAnalogInput
-                0x00000924       0x18 Hal/Hal.o
-                0x00000924                Hal__GetAnalogInput
+                0x00000916       0x18 Hal/Hal.o
+                0x00000916                Hal__GetAnalogInput
  .text.Hal__SetBuzzer
-                0x0000093c       0x18 Hal/Hal.o
-                0x0000093c                Hal__SetBuzzer
+                0x0000092e       0x18 Hal/Hal.o
+                0x0000092e                Hal__SetBuzzer
  .text.Hal__SetBuzzerFreq
-                0x00000954       0x12 Hal/Hal.o
-                0x00000954                Hal__SetBuzzerFreq
+                0x00000946       0x12 Hal/Hal.o
+                0x00000946                Hal__SetBuzzerFreq
  .text.LEDsUpdate
-                0x00000966       0x7c Hal/Hal.o
-                0x00000966                LEDsUpdate
+                0x00000958       0x7c Hal/Hal.o
+                0x00000958                LEDsUpdate
  .text.KeysRead
-                0x000009e2       0xae Hal/Hal.o
-                0x000009e2                KeysRead
+                0x000009d4       0xae Hal/Hal.o
+                0x000009d4                KeysRead
  .text.Hal__FastHandler
-                0x00000a90        0xa Hal/Hal.o
-                0x00000a90                Hal__FastHandler
+                0x00000a82        0xa Hal/Hal.o
+                0x00000a82                Hal__FastHandler
  .text.ADProcess
-                0x00000a9a       0xe8 Hal/Hal.o
-                0x00000a9a                ADProcess
+                0x00000a8c       0xe8 Hal/Hal.o
+                0x00000a8c                ADProcess
  .text.Hal__BackgroundHandler
-                0x00000b82        0x6 Hal/Hal.o
-                0x00000b82                Hal__BackgroundHandler
+                0x00000b74        0x6 Hal/Hal.o
+                0x00000b74                Hal__BackgroundHandler
  .text.SevenSeg_WriteValueToSegment
-                0x00000b88       0x62 Hal/SevenSeg.o
-                0x00000b88                SevenSeg_WriteValueToSegment
+                0x00000b7a       0x62 Hal/SevenSeg.o
+                0x00000b7a                SevenSeg_WriteValueToSegment
  .text.Display__Initialize
-                0x00000bea        0x6 System/Display.o
-                0x00000bea                Display__Initialize
+                0x00000bdc        0x6 System/Display.o
+                0x00000bdc                Display__Initialize
  .text.Display__SetState
-                0x00000bf0        0xa System/Display.o
-                0x00000bf0                Display__SetState
+                0x00000be2        0xa System/Display.o
+                0x00000be2                Display__SetState
  .text.UpdateDisplayLeds
-                0x00000bfa       0x78 System/Display.o
-                0x00000bfa                UpdateDisplayLeds
+                0x00000bec       0x78 System/Display.o
+                0x00000bec                UpdateDisplayLeds
  .text.ReadDisplayKeys
-                0x00000c72       0x34 System/Display.o
-                0x00000c72                ReadDisplayKeys
+                0x00000c64       0x34 System/Display.o
+                0x00000c64                ReadDisplayKeys
  .text.Display__GetEvent
-                0x00000ca6        0xa System/Display.o
-                0x00000ca6                Display__GetEvent
+                0x00000c98        0xa System/Display.o
+                0x00000c98                Display__GetEvent
  .text.UpdateDisplaySevenSeg
-                0x00000cb0       0x6a System/Display.o
-                0x00000cb0                UpdateDisplaySevenSeg
+                0x00000ca2       0x6a System/Display.o
+                0x00000ca2                UpdateDisplaySevenSeg
  .text.ReadSensor
-                0x00000d1a        0xc System/PortSensor.o
-                0x00000d1a                ReadSensor
+                0x00000d0c        0xc System/PortSensor.o
+                0x00000d0c                ReadSensor
  .text.PortSensor__Movie
-                0x00000d26       0x32 System/PortSensor.o
-                0x00000d26                PortSensor__Movie
+                0x00000d18       0x48 System/PortSensor.o
+                0x00000d18                PortSensor__Movie
  .text.PositionSensor__Initialize
-                0x00000d58        0xe System/PositionSensor.o
-                0x00000d58                PositionSensor__Initialize
+                0x00000d60        0xe System/PositionSensor.o
+                0x00000d60                PositionSensor__Initialize
  .text.PositionSensor__ConversionHandler
-                0x00000d66       0x10 System/PositionSensor.o
-                0x00000d66                PositionSensor__ConversionHandler
+                0x00000d6e       0x10 System/PositionSensor.o
+                0x00000d6e                PositionSensor__ConversionHandler
  .text.PositionSensor__GetMeters
-                0x00000d76       0x1c System/PositionSensor.o
-                0x00000d76                PositionSensor__GetMeters
+                0x00000d7e       0x1c System/PositionSensor.o
+                0x00000d7e                PositionSensor__GetMeters
  .text.Sounds__Initialize
-                0x00000d92       0x16 System/Sounds.o
-                0x00000d92                Sounds__Initialize
+                0x00000d9a       0x16 System/Sounds.o
+                0x00000d9a                Sounds__Initialize
  .text.Sounds__PlaySounds
-                0x00000da8       0x12 System/Sounds.o
-                0x00000da8                Sounds__PlaySounds
+                0x00000db0       0x12 System/Sounds.o
+                0x00000db0                Sounds__PlaySounds
  .text.PowerOnSoundHandler
-                0x00000dba      0x110 System/Sounds.o
-                0x00000dba                PowerOnSoundHandler
+                0x00000dc2      0x110 System/Sounds.o
+                0x00000dc2                PowerOnSoundHandler
  .text.KeyPressSoundHandler
-                0x00000eca       0x4a System/Sounds.o
-                0x00000eca                KeyPressSoundHandler
+                0x00000ed2       0x4a System/Sounds.o
+                0x00000ed2                KeyPressSoundHandler
  .text.EndCycleSoundHandler
-                0x00000f14       0x4c System/Sounds.o
-                0x00000f14                EndCycleSoundHandler
+                0x00000f1c       0x4c System/Sounds.o
+                0x00000f1c                EndCycleSoundHandler
  .text.Sounds__Background
-                0x00000f60       0x4c System/Sounds.o
-                0x00000f60                Sounds__Background
+                0x00000f68       0x4c System/Sounds.o
+                0x00000f68                Sounds__Background
  .text.libgcc.div
-                0x00000fac       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
-                0x00000fac                _div
-                0x00000fac                __divmodhi4
+                0x00000fb4       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
+                0x00000fb4                _div
+                0x00000fb4                __divmodhi4
  .text.libgcc.div
-                0x00000fd4       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
-                0x00000fd4                __udivmodhi4
-                0x00000ffc                . = ALIGN (0x2)
+                0x00000fdc       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+                0x00000fdc                __udivmodhi4
+                0x00001004                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000ffc        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x00000ffc                _exit
-                0x00000ffc                exit
+ .fini9         0x00001004        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00001004                _exit
+                0x00001004                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -618,11 +618,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000ffc        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x00001004        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00001000                _etext = .
+                0x00001008                _etext = .
 
-.data           0x00800100       0x52 load address 0x00001000
+.data           0x00800100       0x52 load address 0x00001008
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -731,8 +731,8 @@ END GROUP
                 0x008001d8                PowerON_Sound_Step
                 0x008001d9                Key_Press_Sound_Step
                 0x008001da                PROVIDE (__bss_end, .)
-                0x00001000                __data_load_start = LOADADDR (.data)
-                0x00001052                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00001008                __data_load_start = LOADADDR (.data)
+                0x0000105a                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x008001da        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
@@ -847,56 +847,56 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x384c
+.debug_info     0x00000000     0x38dd
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x5f4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5/crtatmega328p.o
- .debug_info    0x000005f4      0x2e7 Appl/Appl.o
- .debug_info    0x000008db      0x2b8 Appl/main.o
- .debug_info    0x00000b93      0x287 Appl/OvenPositionControl.o
- .debug_info    0x00000e1a      0x4e9 Driver/Adc.o
- .debug_info    0x00001303      0x356 Driver/Gpio.o
- .debug_info    0x00001659      0x56d Driver/Pwm.o
- .debug_info    0x00001bc6      0x444 Driver/Timer.o
- .debug_info    0x0000200a      0x807 Hal/Hal.o
- .debug_info    0x00002811      0x142 Hal/SevenSeg.o
- .debug_info    0x00002953      0x59b System/Display.o
- .debug_info    0x00002eee      0x22b System/PortSensor.o
- .debug_info    0x00003119      0x1b5 System/PositionSensor.o
- .debug_info    0x000032ce      0x57e System/Sounds.o
+ .debug_info    0x000005f4      0x2d3 Appl/Appl.o
+ .debug_info    0x000008c7      0x2b8 Appl/main.o
+ .debug_info    0x00000b7f      0x287 Appl/OvenPositionControl.o
+ .debug_info    0x00000e06      0x4e9 Driver/Adc.o
+ .debug_info    0x000012ef      0x356 Driver/Gpio.o
+ .debug_info    0x00001645      0x56d Driver/Pwm.o
+ .debug_info    0x00001bb2      0x444 Driver/Timer.o
+ .debug_info    0x00001ff6      0x807 Hal/Hal.o
+ .debug_info    0x000027fd      0x142 Hal/SevenSeg.o
+ .debug_info    0x0000293f      0x59b System/Display.o
+ .debug_info    0x00002eda      0x2d0 System/PortSensor.o
+ .debug_info    0x000031aa      0x1b5 System/PositionSensor.o
+ .debug_info    0x0000335f      0x57e System/Sounds.o
 
-.debug_abbrev   0x00000000     0x153e
+.debug_abbrev   0x00000000     0x1556
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x5a2 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5/crtatmega328p.o
- .debug_abbrev  0x000005a2       0xbd Appl/Appl.o
- .debug_abbrev  0x0000065f       0xbf Appl/main.o
- .debug_abbrev  0x0000071e       0xe4 Appl/OvenPositionControl.o
- .debug_abbrev  0x00000802      0x16f Driver/Adc.o
- .debug_abbrev  0x00000971      0x164 Driver/Gpio.o
- .debug_abbrev  0x00000ad5      0x1a7 Driver/Pwm.o
- .debug_abbrev  0x00000c7c      0x184 Driver/Timer.o
- .debug_abbrev  0x00000e00      0x1db Hal/Hal.o
- .debug_abbrev  0x00000fdb       0xc7 Hal/SevenSeg.o
- .debug_abbrev  0x000010a2      0x155 System/Display.o
- .debug_abbrev  0x000011f7       0xf7 System/PortSensor.o
- .debug_abbrev  0x000012ee       0xfc System/PositionSensor.o
- .debug_abbrev  0x000013ea      0x154 System/Sounds.o
+ .debug_abbrev  0x000005a2       0xd5 Appl/Appl.o
+ .debug_abbrev  0x00000677       0xbf Appl/main.o
+ .debug_abbrev  0x00000736       0xe4 Appl/OvenPositionControl.o
+ .debug_abbrev  0x0000081a      0x16f Driver/Adc.o
+ .debug_abbrev  0x00000989      0x164 Driver/Gpio.o
+ .debug_abbrev  0x00000aed      0x1a7 Driver/Pwm.o
+ .debug_abbrev  0x00000c94      0x184 Driver/Timer.o
+ .debug_abbrev  0x00000e18      0x1db Hal/Hal.o
+ .debug_abbrev  0x00000ff3       0xc7 Hal/SevenSeg.o
+ .debug_abbrev  0x000010ba      0x155 System/Display.o
+ .debug_abbrev  0x0000120f       0xf7 System/PortSensor.o
+ .debug_abbrev  0x00001306       0xfc System/PositionSensor.o
+ .debug_abbrev  0x00001402      0x154 System/Sounds.o
 
-.debug_line     0x00000000     0x19dc
+.debug_line     0x00000000     0x19f6
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x133 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5/crtatmega328p.o
- .debug_line    0x00000133      0x164 Appl/Appl.o
- .debug_line    0x00000297      0x1c9 Appl/main.o
- .debug_line    0x00000460      0x15f Appl/OvenPositionControl.o
- .debug_line    0x000005bf      0x1f8 Driver/Adc.o
- .debug_line    0x000007b7      0x193 Driver/Gpio.o
- .debug_line    0x0000094a      0x21f Driver/Pwm.o
- .debug_line    0x00000b69      0x327 Driver/Timer.o
- .debug_line    0x00000e90      0x3af Hal/Hal.o
- .debug_line    0x0000123f      0x10d Hal/SevenSeg.o
- .debug_line    0x0000134c      0x1df System/Display.o
- .debug_line    0x0000152b      0x100 System/PortSensor.o
- .debug_line    0x0000162b       0xd4 System/PositionSensor.o
- .debug_line    0x000016ff      0x2dd System/Sounds.o
+ .debug_line    0x00000133      0x152 Appl/Appl.o
+ .debug_line    0x00000285      0x1c9 Appl/main.o
+ .debug_line    0x0000044e      0x15f Appl/OvenPositionControl.o
+ .debug_line    0x000005ad      0x1f8 Driver/Adc.o
+ .debug_line    0x000007a5      0x193 Driver/Gpio.o
+ .debug_line    0x00000938      0x21f Driver/Pwm.o
+ .debug_line    0x00000b57      0x327 Driver/Timer.o
+ .debug_line    0x00000e7e      0x3af Hal/Hal.o
+ .debug_line    0x0000122d      0x10d Hal/SevenSeg.o
+ .debug_line    0x0000133a      0x1df System/Display.o
+ .debug_line    0x00001519      0x12c System/PortSensor.o
+ .debug_line    0x00001645       0xd4 System/PositionSensor.o
+ .debug_line    0x00001719      0x2dd System/Sounds.o
 
 .debug_frame    0x00000000      0x59c
  *(.debug_frame)
@@ -938,7 +938,7 @@ END GROUP
  .debug_str     0x000013ba       0xd6 System/Display.o
                                 0x415 (size before relaxing)
  .debug_str     0x00001490       0xbc System/PortSensor.o
-                                0x21f (size before relaxing)
+                                0x313 (size before relaxing)
  .debug_str     0x0000154c       0x73 System/PositionSensor.o
                                 0x27b (size before relaxing)
  .debug_str     0x000015bf      0x217 System/Sounds.o

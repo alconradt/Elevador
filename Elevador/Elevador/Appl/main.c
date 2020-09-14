@@ -40,7 +40,7 @@ void main(void)
 	TCCR1B = 0;                        //limpa registrador
 	TCCR1B |= (1<<CS10)|(1 << CS12);   // configura prescaler para 1024: CS12 = 1 e CS10 = 1
 	
-	TCNT1 = 62500;      //para contar a cada 250ms
+	TCNT1 = 0xC2F7;      //para contar a cada 1s
 	//TCNT1 = 0xC2F7;                    //inicia timer com valor para que estouro ocorra em 1 segundo
 	//TCNT1 = 34186;                   // Para contar 2s=> 65536 - 31330
 	// 65536-(16MHz/1024/1Hz) =  65536 - 15.625 = 49911(0xC2F7)=> 15.625 é o período desejado.

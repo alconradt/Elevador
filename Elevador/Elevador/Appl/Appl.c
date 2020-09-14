@@ -30,7 +30,7 @@ FLOOR_STATE Floor_position;
 
 #define EXP_TIMER               DISABLED       // TEMPO em ms
 #define EXP_TIMER1              DISABLED       // TEMPO em HMS
-#define TIME_IN_50MS_BASE	20 //1s in 50ms time base (20*50ms = 1s)
+#define TIME_IN_50MS_BASE	    20 //1s in 50ms time base (20*50ms = 1s)
 
 //Oven Min time parameters
 #define OVEN_MIN_ON_TIME_SEC	10
@@ -69,9 +69,6 @@ void Appl__Initialize(void)
 {
 	User_Action = EVENTS_NO_EVENT;
 	Timer_Counter = TIME_IN_50MS_BASE;
-	Toggle = OFF;
-	Sounds__PlaySounds(SOUND_POWER_ON);   //buzzer de power on
-	Trigger = FALSE;
 }
 
 void Appl__Handler(void)
