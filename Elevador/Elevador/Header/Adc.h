@@ -10,8 +10,8 @@
 #define ADC_H_
 
 //-------------------------------------- Include Files ----------------------------------------------------------------
-#include <Z:\Elevador\Elevador\Elevador\Header\Micro.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Adc_prm.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Micro.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Adc_prm.h>
 
 
 //-------------------------------------- Defines, Enumerations ----------------------------------------------------------------

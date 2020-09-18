@@ -7,11 +7,11 @@
 
 
 //-------------------------------------- Include Files ----------------------------------------------------------------
-#include <Z:\Elevador\Elevador\Elevador\Header\C_Types.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Display.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Hal.h>S
-#include <Z:\Elevador\Elevador\Elevador\Header\PositionSensor.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\OvenPositionControl.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\C_Types.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Display.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Hal.h>S
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\PositionSensor.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\OvenPositionControl.h>
 //-------------------------------------- PUBLIC (Variables) -----------------------------------------------------------
 
 

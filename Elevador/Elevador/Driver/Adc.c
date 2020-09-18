@@ -7,10 +7,10 @@
 
 //-------------------------------------- Include Files ----------------------------------------------------------------
 #include <avr/io.h> //definições do componente especificado 
-#include <Z:\Elevador\Elevador\Elevador\Header\C_Types.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Adc.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Gpio.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Hal.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\C_Types.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Adc.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Gpio.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Hal.h>
  
 //-------------------------------------- PUBLIC (Variables) -----------------------------------------------------------
 

@@ -1,31 +1,25 @@
 System/PortSensor.d System/PortSensor.o: ../System/PortSensor.c \
- Z:\Elevador\Elevador\Elevador\Header\C_Types.h \
- Z:\Elevador\Elevador\Elevador\Header\PortSensor.h \
- Z:\Elevador\Elevador\Elevador\Header\PortSensor_prm.h \
- Z:\Elevador\Elevador\Elevador\Header\Hal.h \
- Z:\Elevador\Elevador\Elevador\Header\Hal_prm.h \
- Z:\Elevador\Elevador\Elevador\Header\Sounds.h \
- Z:\Elevador\Elevador\Elevador\Header\Sound_prm.h \
- Z:\Elevador\Elevador\Elevador\Header\C_types.h \
- Z:\Elevador\Elevador\Elevador\Header\Timer.h \
- Z:\Elevador\Elevador\Elevador\Header\Timer_prm.h
+ D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\C_Types.h \
+ D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\PortSensor.h \
+ D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\PortSensor_prm.h \
+ D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Hal.h \
+ D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Hal_prm.h \
+ D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Sounds.h \
+ D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Sound_prm.h \
+ D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\C_types.h
 
-Z:\Elevador\Elevador\Elevador\Header\C_Types.h:
+D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\C_Types.h:
 
-Z:\Elevador\Elevador\Elevador\Header\PortSensor.h:
+D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\PortSensor.h:
 
-Z:\Elevador\Elevador\Elevador\Header\PortSensor_prm.h:
+D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\PortSensor_prm.h:
 
-Z:\Elevador\Elevador\Elevador\Header\Hal.h:
+D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Hal.h:
 
-Z:\Elevador\Elevador\Elevador\Header\Hal_prm.h:
+D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Hal_prm.h:
 
-Z:\Elevador\Elevador\Elevador\Header\Sounds.h:
+D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Sounds.h:
 
-Z:\Elevador\Elevador\Elevador\Header\Sound_prm.h:
+D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Sound_prm.h:
 
-Z:\Elevador\Elevador\Elevador\Header\C_types.h:
-
-Z:\Elevador\Elevador\Elevador\Header\Timer.h:
-
-Z:\Elevador\Elevador\Elevador\Header\Timer_prm.h:
+D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\C_types.h:

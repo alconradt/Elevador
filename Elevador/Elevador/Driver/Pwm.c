@@ -6,10 +6,10 @@
  */ 
 
 #include <avr/io.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Gpio.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Hal.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Pwm.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Micro.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Gpio.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Hal.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Pwm.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Micro.h>
 
 //*********************************************************
 //

@@ -8,17 +8,17 @@
 #ifndef MAIN_PRM_H_
 #define MAIN_PRM_H_
 //-------------------------------------- Include Files ----------------------------------------------------------------
-#include <Z:\Elevador\Elevador\Elevador\Header\C_Types.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Appl.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Display.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Gpio.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Adc.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Timer.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Hal.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\PositionSensor.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\OvenPositionControl.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Pwm.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Sounds.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\C_Types.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Appl.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Display.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Gpio.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Adc.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Timer.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Hal.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\PositionSensor.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\OvenPositionControl.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Pwm.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Sounds.h>
 //-------------------------------------- Defines ----------------------------------------------------------------
 
 // Select ENALBED to use a fixed slot time duration for each main slot, otherwise select DISABLED

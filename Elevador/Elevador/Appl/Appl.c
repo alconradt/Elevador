@@ -7,22 +7,24 @@
 
 //-------------------------------------- Include Files ----------------------------------------------------------------
 
-#include <Z:\Elevador\Elevador\Elevador\Header\C_Types.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Appl.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Display.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\C_Types.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Appl.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Display.h>
 //#include <alloca.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Gpio.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Adc.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Timer.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Hal.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\OvenPositionControl.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\PortSensor.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Pwm.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Sounds.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Gpio.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Adc.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Timer.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Hal.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\OvenPositionControl.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\PortSensor.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Pwm.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Sounds.h>
 
 //-------------------------------------- PUBLIC (Variables) -----------------------------------------------------------
 KEY_SOLICITATION_TYPE User_Action;
 FLOOR_STATE Floor_position; 
+SENSOR_STATUS People;
+PORT_STATUS Port_status;
 
 //-------------------------------------- Defines, Enumerations ----------------------------------------------------------------
 #define EXP_ADC                ENABLED
@@ -30,7 +32,7 @@ FLOOR_STATE Floor_position;
 
 #define EXP_TIMER               DISABLED       // TEMPO em ms
 #define EXP_TIMER1              DISABLED       // TEMPO em HMS
-#define TIME_IN_50MS_BASE	    20 //1s in 50ms time base (20*50ms = 1s)
+#define TIME_IN_50MS_BASE	20 //1s in 50ms time base (20*50ms = 1s)
 
 //Oven Min time parameters
 #define OVEN_MIN_ON_TIME_SEC	10
@@ -69,12 +71,16 @@ void Appl__Initialize(void)
 {
 	User_Action = EVENTS_NO_EVENT;
 	Timer_Counter = TIME_IN_50MS_BASE;
+	Toggle = OFF;
+	Sounds__PlaySounds(SOUND_POWER_ON);   //buzzer de power on
+	Trigger = FALSE;
 }
 
 void Appl__Handler(void)
 {
 	User_Action = Display__GetEvent();
-	if (User_Action != EVENTS_NO_EVENT)
+	People = ReadSensor();
+	if (User_Action != EVENTS_NO_EVENT && People==NO_PEOPLE)
 	{
 		switch(User_Action)
 		{
@@ -110,6 +116,17 @@ void Appl__Handler(void)
 			default:
 			break;
 		}//fim do switch
+		
+		if(People==NO_PEOPLE)
+		{
+			Hal__SetLed(LED_2,ACENDE_LED);
+			Port_status = PORT_CLOSED;
+		}
+		else
+		{
+			Hal__SetLed(LED_2,APAGA_LED);
+			Port_status = PORT_OPEN;
+		}
 	}
 }// fim do Appl_Handler
 

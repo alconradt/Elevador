@@ -16,9 +16,9 @@
 // #include "C_Types.h"   // vamos inserir depois!!!!!
 
 //Definições de macros - empregadas para o trabalho com os bits
-#include <Z:\Elevador\Elevador\Elevador\Header\Gpio.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Gpio.h>
 
-#include <Z:\Elevador\Elevador\Elevador\Header\Micro.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Micro.h>
 //-------------------------------------- PUBLIC (Variables) -----------------------------------------------------------
 const unsigned char GPIO_PIN_SET_MASK[] = {0x1,0x2,0x4,0x8,0x10,0x20,0x40,0x80};
 

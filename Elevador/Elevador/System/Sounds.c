@@ -6,10 +6,10 @@
  */ 
 
 //-------------------------------------- Include Files ----------------------------------------------------------------
-#include <Z:\Elevador\Elevador\Elevador\Header\Micro.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Hal.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Sounds.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Timer.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Micro.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Hal.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Sounds.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Timer.h>
 #include <util/delay.h>   //para incluir rotina _delay_ms()
 
 //--------------------defines---------------------

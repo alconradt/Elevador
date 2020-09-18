@@ -8,12 +8,12 @@
 //-------------------------------------- Include Files ----------------------------------------------------------------
 //#include "C_Types.h"
 #include <avr/io.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Gpio.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Adc.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Pwm.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Hal.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\Hal_prm.h>
-#include <Z:\Elevador\Elevador\Elevador\Header\SevenSeg.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Gpio.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Adc.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Pwm.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Hal.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Hal_prm.h>
+#include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\SevenSeg.h>
 //-------------------------------------- PUBLIC (Variables) -----------------------------------------------------------
 
 const unsigned char Leds_Enable_Table[NUM_OF_LEDS]= {USE_LED_0, USE_LED_1, USE_LED_2, USE_LED_3};
