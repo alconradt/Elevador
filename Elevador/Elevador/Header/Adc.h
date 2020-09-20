@@ -1,8 +1,7 @@
 /*
- * Adc.h
  *
- * Created: 30/05/2019 19:33:38    MODIFICADO: 03/06/2019
- *  Author: Ana Watanabe
+ *  Created on: 13/09/2020
+ *  Authors: André Conradt, Matheus Gasperin and Matheus Knop
  */ 
 
 

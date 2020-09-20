@@ -1,10 +1,8 @@
 /*
- * Sounds.h
  *
- * Created: 05/11/2019 22:49:44
- *  Author: Ana Watanabe
+ *  Created on: 13/09/2020
+ *  Authors: André Conradt, Matheus Gasperin and Matheus Knop
  */ 
-
 
 #ifndef Sounds_H_
 #define Sounds_H_

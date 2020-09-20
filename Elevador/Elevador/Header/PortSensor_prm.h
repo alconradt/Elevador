@@ -1,8 +1,7 @@
 /*
- * PortSensor_prm.h
  *
- * Created: 13/09/2020 21:58:51
- *  Author: andre
+ *  Created on: 13/09/2020
+ *  Authors: André Conradt, Matheus Gasperin and Matheus Knop
  */ 
 
 

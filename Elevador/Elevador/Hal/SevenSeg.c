@@ -1,9 +1,8 @@
 /*
- * SevenSeg.c
  *
- * Created: 13/05/2019 14:04:34
- *  Author: Ana Watanabe
- */ 
+ *  Created on: 13/09/2020
+ *  Authors: André Conradt, Matheus Gasperin and Matheus Knop
+ */  
 #include <avr/io.h> 
 
 #include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Micro.h>

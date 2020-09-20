@@ -1,8 +1,7 @@
 /*
- * Adc_prm.h
  *
- * Created: 30/05/2019 19:34:59   MODIFICdo: 03/06/2019
- *  Author: Ana Watanabe
+ *  Created on: 13/09/2020
+ *  Authors: André Conradt, Matheus Gasperin and Matheus Knop
  */ 
 
 #ifndef ADC_PRM_H_

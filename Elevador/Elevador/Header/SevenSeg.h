@@ -1,8 +1,7 @@
 /*
- * SevenSeg.h
  *
- * Created: 13/05/2019 14:12:02
- *  Author: Ana Watanabe
+ *  Created on: 13/09/2020
+ *  Authors: André Conradt, Matheus Gasperin and Matheus Knop
  */ 
 
 

@@ -1,5 +1,4 @@
 /*
- * Display.c
  *
  *  Created on: 13/09/2020
  *  Authors: André Conradt, Matheus Gasperin and Matheus Knop
@@ -44,7 +43,7 @@ void PositionSensor__ConversionHandler(void)
 		if(PositionSensor_Enable_Table[sensor_id] == ENABLED)
 		{
 			ad_value = Hal__GetAnalogInput(PositionSensorTable[sensor_id]); //ad_value em valor digital
-			Position[sensor_id] = ad_value;
+			Position[sensor_id] = ad_value; 
 		}
 		
 	}

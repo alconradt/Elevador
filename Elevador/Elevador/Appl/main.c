@@ -1,7 +1,8 @@
-//-------------------------------------- Include Files ----------------------------------------------------------------
-//#include "C_Types.h"
-//#include <hidef.h> /* for EnableInterrupts macro */
-//#include "derivative.h" /* include peripheral declarations */
+/*
+ *
+ *  Created on: 13/09/2020
+ *  Authors: André Conradt, Matheus Gasperin and Matheus Knop
+ */ 
 
 #define F_CPU 16000000UL
 

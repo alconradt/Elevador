@@ -1,16 +1,14 @@
 /*
- * Appl.c
  *
- *  Created on: 13/05/2019
- *      Author: MAASDN
- */
+ *  Created on: 13/09/2020
+ *  Authors: André Conradt, Matheus Gasperin and Matheus Knop
+ */ 
 
 //-------------------------------------- Include Files ----------------------------------------------------------------
 
 #include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\C_Types.h>
 #include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Appl.h>
 #include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Display.h>
-//#include <alloca.h>
 #include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Gpio.h>
 #include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Adc.h>
 #include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Timer.h>
@@ -21,10 +19,10 @@
 #include <D:\Materias_UDESC\AAM\Testes\Elevador-master\Elevador\Elevador\Header\Sounds.h>
 
 //-------------------------------------- PUBLIC (Variables) -----------------------------------------------------------
-KEY_SOLICITATION_TYPE User_Action;
-FLOOR_STATE Floor_position; 
-SENSOR_STATUS People;
-PORT_STATUS Port_status;
+KEY_SOLICITATION_TYPE User_Action; //Ação solicitada pelo usuário 
+FLOOR_STATE Floor_position; //Piso onde o usuário fez a solicitação de acesso ao elevador
+SENSOR_STATUS People; //Váriavel que indica o status do sensor da porta (Se a porta está aberta e alguém está manuseando o elevador ou não)
+PORT_STATUS Port_status; //Status da porta -> Aberta ou Fechada 
 
 //-------------------------------------- Defines, Enumerations ----------------------------------------------------------------
 #define EXP_ADC                ENABLED
@@ -54,62 +52,54 @@ PORT_STATUS Port_status;
 #define ACENDE_LED               0
 #define APAGA_LED                1
 
-//-------------------------------------- Global Variables ----------------------------------------------------------------
-
-unsigned char Timer_Counter;
-unsigned char Toggle;             // VARIÁVEL PARA PISCAR TODOS OS LEDS QUANDO INICIA CONTAGEM DE TEMPO DE FORNO LIGADO
-unsigned char Trigger;            // INDICA SE O FORNO ESTÁ LIGADO
-//-------------------------------------- PRIVATE (Function Prototypes) ---------------------------------------------------
-
-
 //=====================================================================================================================
-//-------------------------------------- Public Functions -------------------------------------------------------------
+//-------------------------------------- Função de inicialização ------------------------------------------------------
 //=====================================================================================================================
 
 
 void Appl__Initialize(void)
 {
-	User_Action = EVENTS_NO_EVENT;
-	Timer_Counter = TIME_IN_50MS_BASE;
-	Toggle = OFF;
-	Sounds__PlaySounds(SOUND_POWER_ON);   //buzzer de power on
-	Trigger = FALSE;
+	User_Action = EVENTS_NO_EVENT; //Inicializa sem solicitações de eventos pelo usuário
 }
+
+//=====================================================================================================================
+//-------------------------------------- Função Handler------------------------------------------------------
+//=====================================================================================================================
 
 void Appl__Handler(void)
 {
-	User_Action = Display__GetEvent();
-	People = ReadSensor();
-	if (User_Action != EVENTS_NO_EVENT && People==NO_PEOPLE)
+	User_Action = Display__GetEvent(); //Verifica se houve solicitação do usuário
+	People = ReadSensor(); //Verifica se a pessoas operando o elevador de cargas no momento
+	if (User_Action != EVENTS_NO_EVENT && People==NO_PEOPLE) //Se houve solicitação e o elevador não está em uso no momento...
 	{
 		switch(User_Action)
 		{
 			case KEY_GROUND_FLOOR:
-				Hal__SetBuzzerFreq(4000);
-				Sounds__PlaySounds(SOUND_KEY_PRESS);
-				Floor_position = GROUND_STATE;
-				OvenPosition__SetSolicitation(GROUND);
+				Hal__SetBuzzerFreq(4000); //Configura frequência do buzzer
+				Sounds__PlaySounds(SOUND_KEY_PRESS); //Aciona som de button precionado
+				Floor_position = GROUND_STATE; //Atualiza o andar da solicitação
+				OvenPosition__SetSolicitation(GROUND); //Atualiza o andar em que o elevador deve estar 
 			break;
 		
 			case KEY_FIRST_FLOOR:
-				Hal__SetBuzzerFreq(4000);
-				Sounds__PlaySounds(SOUND_KEY_PRESS);
-				Floor_position = FIRST_STATE;
-				OvenPosition__SetSolicitation(FIRST);
+				Hal__SetBuzzerFreq(4000); //Configura frequência do buzzer
+				Sounds__PlaySounds(SOUND_KEY_PRESS); //Aciona som de button precionado
+				Floor_position = FIRST_STATE; //Atualiza o andar da solicitação
+				OvenPosition__SetSolicitation(FIRST); //Atualiza o andar em que o elevador deve estar 
 			break;
 			
-			case KEY_NEXT_FLOOR:
+			case KEY_NEXT_FLOOR: //Solicitação de iniciar a passagem para o próximo andar, este evento ocorre após o elevador chegar no andar solicitado em KEY_GROUND_FLOOR / KEY_FIRST_FLOOR
 				Hal__SetBuzzerFreq(4000);
 				Sounds__PlaySounds(SOUND_KEY_PRESS);
-				if (Floor_position == GROUND_STATE)
+				if (Floor_position == GROUND_STATE) //Se a solicitação foi do térreo, o elevador irá para o primeiro andar
 				{
-					PortSensor__Movie(CLOSED);
-					OvenPosition__SetSolicitation(FIRST);
+					//PortSensor__Movie(CLOSED); //Chama rotina para fechar a porta (NÃO USADO) -> O elevador de carga não possui porta automatizada 
+					OvenPosition__SetSolicitation(FIRST); //Chama rotina que acionará os motores
 				}
 				if (Floor_position == FIRST_STATE)
 				{
-					PortSensor__Movie(CLOSED);
-					OvenPosition__SetSolicitation(GROUND);
+					//PortSensor__Movie(CLOSED); //Chama rotina para fechar a porta (NÃO USADO)
+					OvenPosition__SetSolicitation(GROUND); //Chama rotina que acionará os motores
 				}
 			break;
 			
@@ -117,6 +107,7 @@ void Appl__Handler(void)
 			break;
 		}//fim do switch
 		
+		//Atualiza o status da porta
 		if(People==NO_PEOPLE)
 		{
 			Hal__SetLed(LED_2,ACENDE_LED);
@@ -130,67 +121,6 @@ void Appl__Handler(void)
 	}
 }// fim do Appl_Handler
 
-
-/*void Appl__Handler(void)
-{//unsigned short int ad_value;
-	
-	User_Action = Display__GetEvent();
-	if (User_Action != EVENTS_NO_EVENT)
-	{
-		switch(User_Action)
-		{
-			case KEY_OFF_EVENT:
-			Display__SetState(OVEN_OFF);
-			OvenTempControl__SetLevel(TEMP_LEVEL_OVEN_OFF);
-		    Hal__SetBuzzerFreq(4000);
-			Sounds__PlaySounds(SOUND_KEY_PRESS);    //buzzer de key press
-			Timer__HMSSet(TIMER_HMS_CYCLE_DURATION, 0,0,0);
-			Trigger = FALSE;
-			break;
-				
-			case KEY_MIN_EVENT:
-			Display__SetState(OVEN_MIN);
-			OvenTempControl__SetLevel(TEMP_LEVEL_MIN);
-			Hal__SetBuzzerFreq(2000);
-			Sounds__PlaySounds(SOUND_KEY_PRESS);    //buzzer de key press
-					  Timer__HMSSet(TIMER_HMS_CYCLE_DURATION, OVEN_MIN_ON_TIME_HRS, OVEN_MIN_ON_TIME_MIN, OVEN_MIN_ON_TIME_SEC);
-					  Trigger = TRUE;
-				      break;
-							
-				 case KEY_MED_EVENT:
-					  Display__SetState(OVEN_MED);
-					  OvenTempControl__SetLevel(TEMP_LEVEL_MED);
-				      Hal__SetBuzzerFreq(3000);
-					  Sounds__PlaySounds(SOUND_KEY_PRESS);    //buzzer de key press
-					  Timer__HMSSet(TIMER_HMS_CYCLE_DURATION, OVEN_MED_ON_TIME_HRS, OVEN_MED_ON_TIME_MIN, OVEN_MED_ON_TIME_SEC);
-					  Trigger = TRUE;
-					  break;
-				
-			     case KEY_MAX_EVENT:
-				      Display__SetState(OVEN_MAX);
-					  OvenTempControl__SetLevel(TEMP_LEVEL_MAX);
-					  Hal__SetBuzzerFreq(5000);
-					  Sounds__PlaySounds(SOUND_KEY_PRESS);    //buzzer de key press
-					  Timer__HMSSet(TIMER_HMS_CYCLE_DURATION, OVEN_MAX_ON_TIME_HRS, OVEN_MAX_ON_TIME_MIN, OVEN_MAX_ON_TIME_SEC);
-					  Trigger = TRUE;
-				      break;
-			     default:
-				    break;
-
-			}  //fim switch
-		} // fim do if(USER_ACTION...
-Display__Handler();
-
-if( (Trigger == TRUE ) &&
-((Timer__HMSGetStatus(TIMER_HMS_CYCLE_DURATION) == TIMER_EXPIRED)))
-	{
-	Sounds__PlaySounds(SOUND_END_CYCLE);
-	Display__SetState(OVEN_OFF);
-	OvenTempControl__SetLevel(TEMP_LEVEL_OVEN_OFF);
-	Trigger = FALSE;
-	}
-
-}   // fim do Appl_Handler()*/
 
 //---------------------------------------------------------------------------------------------------------------------
 

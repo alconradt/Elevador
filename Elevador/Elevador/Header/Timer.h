@@ -1,9 +1,8 @@
 /*
- * Timer.h
  *
- *  Created on: 08/10/2017
- *      Author: MAASDN
- */
+ *  Created on: 13/09/2020
+ *  Authors: André Conradt, Matheus Gasperin and Matheus Knop
+ */ 
 
 #ifndef TIMER_H_
 #define TIMER_H_

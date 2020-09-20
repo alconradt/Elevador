@@ -1,9 +1,8 @@
 /*
- * Timer.c
  *
- *  Created on: 08/10/2017
- *      Author: MAASDN
- */
+ *  Created on: 13/09/2020
+ *  Authors: André Conradt, Matheus Gasperin and Matheus Knop
+ */ 
 
 //-------------------------------------- Include Files ----------------------------------------------------------------
 #include <avr/interrupt.h>

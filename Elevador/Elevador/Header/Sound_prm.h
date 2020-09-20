@@ -1,8 +1,7 @@
 /*
- * Sound_prm.h
  *
- * Created: 21/08/2020 10:52:14
- *  Author: Ana Watanabe
+ *  Created on: 13/09/2020
+ *  Authors: André Conradt, Matheus Gasperin and Matheus Knop
  */ 
 
 

@@ -1,9 +1,8 @@
 /*
- * Hal_prm.h
  *
- *  Created on: 04/09/2017
- *      Author: MAASDN
- */
+ *  Created on: 13/09/2020
+ *  Authors: André Conradt, Matheus Gasperin and Matheus Knop
+ */ 
 
 #ifndef HAL_PRM_H_
 #define HAL_PRM_H_

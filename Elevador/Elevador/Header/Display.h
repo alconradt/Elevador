@@ -1,9 +1,8 @@
 /*
- * Display.h
  *
- *  Created on: 10/09/2017
- *      Author: MAASDN
- */
+ *  Created on: 13/09/2020
+ *  Authors: André Conradt, Matheus Gasperin and Matheus Knop
+ */ 
 
 #ifndef DISPLAY_H_
 #define DISPLAY_H_

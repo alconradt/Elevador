@@ -1,8 +1,7 @@
 /*
- * Adc.c
  *
- * Created: 30/05/2019 19:09:45
- *  Author: Ana Watanabe
+ *  Created on: 13/09/2020
+ *  Authors: André Conradt, Matheus Gasperin and Matheus Knop
  */ 
 
 //-------------------------------------- Include Files ----------------------------------------------------------------

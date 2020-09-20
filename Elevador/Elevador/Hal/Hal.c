@@ -1,8 +1,7 @@
 /*
- * Hal.c
  *
- * Created: 11/04/2019 10:11:08
- *  Author: Ana Watanabe
+ *  Created on: 13/09/2020
+ *  Authors: André Conradt, Matheus Gasperin and Matheus Knop
  */ 
 
 //-------------------------------------- Include Files ----------------------------------------------------------------

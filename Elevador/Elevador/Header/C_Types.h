@@ -1,8 +1,8 @@
-/* C_Types.h
+/*
  *
- *  Created on: Sep 4, 2017
- *      Author: MAASDN
- */
+ *  Created on: 13/09/2020
+ *  Authors: André Conradt, Matheus Gasperin and Matheus Knop
+ */ 
 
 #ifndef C_TYPES_H_
 #define C_TYPES_H_

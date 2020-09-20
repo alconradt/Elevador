@@ -1,8 +1,7 @@
 /*
- *main.h
  *
- * Created: 02/04/2019 22:03:13
- *  Author: Ana Watanabe
+ *  Created on: 13/09/2020
+ *  Authors: André Conradt, Matheus Gasperin and Matheus Knop
  */ 
 
 

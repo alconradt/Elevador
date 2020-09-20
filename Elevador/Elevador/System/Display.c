@@ -1,9 +1,8 @@
 /*
- * Display.c
  *
  *  Created on: 13/09/2020
  *  Authors: André Conradt, Matheus Gasperin and Matheus Knop
- */
+ */ 
 
 
 //-------------------------------------- Include Files ----------------------------------------------------------------

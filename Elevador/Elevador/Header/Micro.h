@@ -1,8 +1,7 @@
 /*
- * Micro.h
  *
- * Created: 27/03/2019 18:12:30
- *  Author: Ana Watanabe
+ *  Created on: 13/09/2020
+ *  Authors: André Conradt, Matheus Gasperin and Matheus Knop
  */ 
 
 #ifndef MICRO_H_

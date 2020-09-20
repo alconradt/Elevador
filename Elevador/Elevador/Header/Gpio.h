@@ -1,8 +1,7 @@
 /*
- * Gpio.h
  *
- * Created: 26/03/2019 22:14:42
- *  Author: Ana Watanabe
+ *  Created on: 13/09/2020
+ *  Authors: André Conradt, Matheus Gasperin and Matheus Knop
  */ 
 
 
